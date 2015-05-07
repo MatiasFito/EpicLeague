@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="main.Master.cs" Inherits="WebApp.App.view.masterpages.Site1" %>
+
+<%@ Register src="../userControls/ucFooter.ascx" tagname="ucFooter" tagprefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <link href="../../styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <asp:ContentPlaceHolder ID="head" runat="server">
+            <title></title>
+        </asp:ContentPlaceHolder>
+    </head>
+    <body class="container">
+        <form id="form_main" runat="server">
+            <div>
+                <asp:ContentPlaceHolder ID="content" runat="server">
+        
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+        <uc1:ucFooter ID="ucFooter1" runat="server" />
+        <script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+        </body>
+</html>
