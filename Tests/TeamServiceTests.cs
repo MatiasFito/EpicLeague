@@ -44,16 +44,5 @@ namespace Tests
 
             teamService.RemoveElementById(updatedTeamCount - 1);
         }
-
-        [TestMethod]
-        public void AddPlayerShouldAddAPlayerToTheTeam()
-        {
-            Team team = this.teamService.GetElementById(0);
-            int originalPlayerCount = team.Players.Count;
-
-            team.AddPlayer(new Player("test", "test", 0));
-            // Revisar que el cambio se vea reflejado en Team Service
-            Assert.AreEqual((originalPlayerCount + 1),teamService.GetElementById(0).Players.Count);
-        }
     }
 }

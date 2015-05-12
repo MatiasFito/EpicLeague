@@ -47,7 +47,6 @@ namespace Model.services
             return this.playerList[id];
         }
 
-
         public void RemoveElementById(int id)
         {
             this.playerList.RemoveAt(id);
