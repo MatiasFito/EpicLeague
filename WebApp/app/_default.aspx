@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-xs-12">
             <h1>Bienvenido</h1>
-            <h3> Elige una de las secciones para comenzar </h3>
+            <h3>Elige una de las secciones para comenzar </h3>
         </div>
     </div>
     <div class="row">

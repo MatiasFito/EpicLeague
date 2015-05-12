@@ -1,13 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{9E41F46D-B55C-47A8-B7BF-A863FD5EAD92}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{AD45C573-76C4-48BA-A33E-1AD5466835B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{D32F48E6-ACFF-451A-A6BA-F4F8A51B347F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DC574DF4-27D1-4227-B55E-C711650EB2C7}"
+	ProjectSection(SolutionItems) = preProject
+		EpicLeague.vsmdi = EpicLeague.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = EpicLeague.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -21,6 +31,10 @@ Global
 		{AD45C573-76C4-48BA-A33E-1AD5466835B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD45C573-76C4-48BA-A33E-1AD5466835B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD45C573-76C4-48BA-A33E-1AD5466835B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D32F48E6-ACFF-451A-A6BA-F4F8A51B347F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D32F48E6-ACFF-451A-A6BA-F4F8A51B347F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D32F48E6-ACFF-451A-A6BA-F4F8A51B347F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D32F48E6-ACFF-451A-A6BA-F4F8A51B347F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
