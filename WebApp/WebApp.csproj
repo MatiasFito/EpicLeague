@@ -60,34 +60,11 @@
     <Resource Include="app\scripts\bootstrap.min.js" />
     <Resource Include="app\scripts\jquery-2.1.4.min.js" />
     <Resource Include="app\styles\bootstrap.min.css" />
-    <Content Include="app\views\resumen\Default.aspx" />
     <Content Include="app\views\userControls\ucFooter.ascx" />
-    <Content Include="app\views\userControls\ucListadoEquipos.ascx" />
-    <Content Include="app\_default.aspx" />
+    <Content Include="index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="app\views\masterpages\main.Master.cs">
-      <DependentUpon>main.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\views\masterpages\main.Master.designer.cs">
-      <DependentUpon>main.Master</DependentUpon>
-    </Compile>
-    <Compile Include="app\views\masterpages\ResumenMaster.Master.cs">
-      <DependentUpon>ResumenMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\views\masterpages\ResumenMaster.Master.designer.cs">
-      <DependentUpon>ResumenMaster.Master</DependentUpon>
-    </Compile>
-    <Compile Include="app\views\resumen\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\views\resumen\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="app\views\userControls\ucFooter.ascx.cs">
       <DependentUpon>ucFooter.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -95,25 +72,16 @@
     <Compile Include="app\views\userControls\ucFooter.ascx.designer.cs">
       <DependentUpon>ucFooter.ascx</DependentUpon>
     </Compile>
-    <Compile Include="app\views\userControls\ucListadoEquipos.ascx.cs">
-      <DependentUpon>ucListadoEquipos.ascx</DependentUpon>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="app\views\userControls\ucListadoEquipos.ascx.designer.cs">
-      <DependentUpon>ucListadoEquipos.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="app\_default.aspx.cs">
-      <DependentUpon>_default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\_default.aspx.designer.cs">
-      <DependentUpon>_default.aspx</DependentUpon>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\views\masterpages\main.Master" />
-    <Content Include="app\views\masterpages\ResumenMaster.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -129,6 +97,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\views\administracion\" />
+    <Folder Include="app\views\masterpages\" />
+    <Folder Include="app\views\resumen\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
