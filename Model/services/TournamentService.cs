@@ -58,6 +58,11 @@ namespace Model.services
             this.tournamentList.Add(tournament);
         }
 
+        public void AddTeamAt(Team team, int id)
+        {
+            this.tournamentList[id].AddTeam(team);
+        }
+
         public Tournament GetElementById(int id)
         {
             return this.tournamentList[id];

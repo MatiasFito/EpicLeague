@@ -45,5 +45,17 @@ namespace Tests
 
             this.tournamentService.RemoveElementById(originalTournamentCount);
         }
+
+        [TestMethod]
+        public void AddTeamAtShouldAddATeamToTheTargetTournament()
+        {
+            Team newTeam = new Team();
+            this.tournamentService.AddTeamAt(newTeam, 0);
+
+            Tournament tournamentZero = this.tournamentService.GetElementById(0);
+            int tournamentZeroTeamCount = tournamentZero.Teams.Count;
+
+            Assert.AreEqual(3, tournamentZeroTeamCount);
+        }
     }
 }
