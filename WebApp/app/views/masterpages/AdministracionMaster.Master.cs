@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebApp.app
+namespace WebApp.app.views.masterpages
 {
-    public partial class _default : System.Web.UI.Page
+    public partial class AdministracionMaster : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

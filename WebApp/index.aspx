@@ -1,0 +1,26 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WebApp.app.views._default" %>
+
+<%@ Register src="app/views/userControls/ucFooter.ascx" tagname="ucFooter" tagprefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <link href="/app/styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <title>Inicio</title>
+    </head>
+    <body class="container">
+        <form id="form1" runat="server">
+            <div class="row">
+                <h1> Bienvenido a la liga </h1>
+                <h3> Seleccione una opcion para comenzar</h3>
+            </div>
+            <div class="row">
+                <asp:Button class="btn btn-primary col-lg-4" Text="Administracion Equipos" runat="server" />
+                <span class="col-lg-1"></span>
+                <asp:Button class="btn btn-primary col-lg-4" Text="Resumen Equipos" runat="server" />
+            </div>
+        <uc1:ucFooter ID="ucFooter1" runat="server" />
+        </form>
+    </body>
+</html>
