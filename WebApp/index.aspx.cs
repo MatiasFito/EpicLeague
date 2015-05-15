@@ -13,5 +13,15 @@ namespace WebApp.app.views
         {
 
         }
+
+        protected void btn_resumen_equipos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/app/views/resumen/Default.aspx");
+        }
+
+        protected void btn_administracion_equipos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/app/views/administracion/CreacionTorneos.aspx");
+        }
     }
 }

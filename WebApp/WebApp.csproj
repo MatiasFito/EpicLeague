@@ -60,6 +60,7 @@
     <Resource Include="app\scripts\bootstrap.min.js" />
     <Resource Include="app\scripts\jquery-2.1.4.min.js" />
     <Resource Include="app\styles\bootstrap.min.css" />
+    <Content Include="app\views\administracion\CreacionTorneos.aspx" />
     <Content Include="app\views\resumen\Default.aspx" />
     <Content Include="app\views\userControls\ucFooter.ascx" />
     <Content Include="app\views\userControls\ucListadoEquipos.ascx" />
@@ -67,6 +68,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="app\views\administracion\CreacionTorneos.aspx.cs">
+      <DependentUpon>CreacionTorneos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\views\administracion\CreacionTorneos.aspx.designer.cs">
+      <DependentUpon>CreacionTorneos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="app\views\masterpages\AdministracionMaster.Master.cs">
       <DependentUpon>AdministracionMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,9 +135,7 @@
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="app\views\administracion\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
