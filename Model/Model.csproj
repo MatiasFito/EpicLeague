@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="entities\Player.cs" />
     <Compile Include="interfaces\DataProviderService.cs" />
+    <Compile Include="orm\TeamORM.cs" />
+    <Compile Include="orm\TournamentTeam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="entities\Team.cs" />
     <Compile Include="entities\Tournament.cs" />

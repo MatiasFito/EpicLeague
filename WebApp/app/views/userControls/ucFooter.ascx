@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucFooter.ascx.cs" Inherits="WebApp.App.view.userControls.ucFooter" %>
-<div class="row">
+<div>
     <p>
         Universidad Nacional de La Matanza. 
         Dpto. de Ingeniería e Investigaciones Tecnológicas. 
