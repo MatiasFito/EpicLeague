@@ -10,60 +10,78 @@
 namespace WebApp.app.views.administracion {
     
     
-    public partial class Default {
+    public partial class CreacionEquipos {
         
         /// <summary>
-        /// form_creacion_torneo control.
+        /// form_creacion_equipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form_creacion_torneo;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form_creacion_equipo;
         
         /// <summary>
-        /// lbl_nombre_torneo control.
+        /// lbl_nombre_equipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_nombre_torneo;
+        protected global::System.Web.UI.WebControls.Label lbl_nombre_equipo;
         
         /// <summary>
-        /// txtbox_nombre_torneo control.
+        /// txtbox_nombre_equipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbox_nombre_torneo;
+        protected global::System.Web.UI.WebControls.TextBox txtbox_nombre_equipo;
         
         /// <summary>
-        /// lbl_estado_torneo control.
+        /// lbl_torneo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_estado_torneo;
+        protected global::System.Web.UI.WebControls.Label lbl_torneo;
         
         /// <summary>
-        /// dropdown_estado_torneo control.
+        /// dropdown_torneo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropdown_estado_torneo;
+        protected global::System.Web.UI.WebControls.DropDownList dropdown_torneo;
         
         /// <summary>
-        /// btn_submit_creacion_torneo control.
+        /// lbl_monto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_submit_creacion_torneo;
+        protected global::System.Web.UI.WebControls.Label lbl_monto;
+        
+        /// <summary>
+        /// txtbox_monto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbox_monto;
+        
+        /// <summary>
+        /// btn_submit_creacion_equipo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_submit_creacion_equipo;
     }
 }

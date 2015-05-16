@@ -14,7 +14,7 @@
             <textarea id="txtarea_comentario" name="S1"></textarea>
         </div>
         <div class="form-group">
-             <asp:Button class="btn btn-primary col-lg-4" Text="Enviar" runat="server" ID="btn_submit_contact"/>
+             <asp:Button class="btn btn-primary" Text="Enviar" runat="server" ID="btn_submit_contact"/>
         </div>
         </form>
 </asp:Content>

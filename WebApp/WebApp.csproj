@@ -60,6 +60,8 @@
     <Resource Include="app\scripts\bootstrap.min.js" />
     <Resource Include="app\scripts\jquery-2.1.4.min.js" />
     <Resource Include="app\styles\bootstrap.min.css" />
+    <Content Include="app\views\administracion\CreacionEquipos.aspx" />
+    <Content Include="app\views\administracion\CreacionJugadores.aspx" />
     <Content Include="app\views\administracion\CreacionTorneos.aspx" />
     <Content Include="app\views\resumen\Contacto.aspx" />
     <Content Include="app\views\resumen\Default.aspx" />
@@ -69,6 +71,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="app\views\administracion\CreacionEquipos.aspx.cs">
+      <DependentUpon>CreacionEquipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\views\administracion\CreacionEquipos.aspx.designer.cs">
+      <DependentUpon>CreacionEquipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\views\administracion\CreacionJugadores.aspx.cs">
+      <DependentUpon>CreacionJugadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\views\administracion\CreacionJugadores.aspx.designer.cs">
+      <DependentUpon>CreacionJugadores.aspx</DependentUpon>
+    </Compile>
     <Compile Include="app\views\administracion\CreacionTorneos.aspx.cs">
       <DependentUpon>CreacionTorneos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
