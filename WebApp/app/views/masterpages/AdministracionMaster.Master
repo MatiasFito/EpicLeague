@@ -31,8 +31,8 @@
 	    </asp:ContentPlaceHolder>
 	    <uc1:ucFooter ID="ucFooter1" runat="server" />
 
-	    <script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
-	    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="/app/scripts/jquery-2.1.4.min.js"></script>
+	    <script type="text/javascript" src="/app/scripts/bootstrap.min.js"></script>
 
     </body>
 </html>

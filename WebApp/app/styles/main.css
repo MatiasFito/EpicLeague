@@ -1,12 +1,38 @@
-﻿body {
-
-
-}
-
-.full {
-  background: url(/app/img/messi-background.jpg) no-repeat center center fixed; 
+﻿.full {
+  background: url(/app/img/messi-background.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+body {
+    background:none;
+    color:white;
+}
+
+.btn-primary {
+    background: transparent;
+	color: white;
+    border-color:greenyellow;
+
+	/* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+
+}
+
+.btn-primary:hover {
+    color:white;
+    background:green;
+    border-color:greenyellow;
+}
+
+.footer {
+  background:black;
+  color:white;
+  border:none;
 }
