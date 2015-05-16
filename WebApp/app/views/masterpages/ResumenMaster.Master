@@ -6,36 +6,35 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link href="../../styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <title>Resumen de Equipos</title>
-</head>
-<body class="container">
-
-        <div>
+    <head runat="server">
+        <link href="../../styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <title>Resumen de Equipos</title>
+    </head>
+    <body class="container">
+        <div class="row">
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand">Epic League</a>
+                        <a class="navbar-brand" href="/index.aspx">Epic League</a>
                     </div>
                     <div>
                         <ul class="nav navbar-nav">
-                            <li><a href="/index.aspx">Inicio</a></li>
                             <li><a href="/app/views/resumen/Default.aspx">Resumen de Equipos</a></li>
                             <li><a href="/app/views/resumen/Contacto.aspx">Contacto</a></li>
                         </ul>
                     </div>
                 </div>
-            </nav>
-            
+            </nav>            
         </div>
-
-    <asp:ContentPlaceHolder ID="content" runat="server">
+        <div class="row">
+            <asp:ContentPlaceHolder ID="content" runat="server">
             </asp:ContentPlaceHolder>
-    <uc1:ucFooter ID="ucFooter1" runat="server" />
-    <script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
-
-</body>
+        </div>
+        <div class="row">
+            <uc1:ucFooter ID="ucFooter1" runat="server" />
+        </div>    
+        <script type="text/javascript" src="/app/scripts/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="/app/scripts/bootstrap.min.js"></script>
+    </body>
 </html>

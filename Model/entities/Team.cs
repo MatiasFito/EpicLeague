@@ -16,6 +16,11 @@ namespace Model
             Players = new List<Player>();
         }
 
+        public Team(string name) 
+        {
+            this.Name = name;
+        }
+
         public Team(string name, List<Player> players)
         {
             Name = name;

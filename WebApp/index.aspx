@@ -10,7 +10,7 @@
         <title>Inicio</title>
     </head>
     <body class="container">
-        <form id="form1" runat="server">
+        <form id="form_index" runat="server">
             <div class="row">
                 <h1> Bienvenido a la liga </h1>
                 <h3> Seleccione una opcion para comenzar</h3>
@@ -20,7 +20,9 @@
                 <span class="col-lg-1"></span>
                 <asp:Button class="btn btn-primary col-lg-4" Text="Resumen Equipos" runat="server" ID="btn_resumen_equipos" OnClick="btn_resumen_equipos_Click" />
             </div>
-        <uc1:ucFooter ID="ucFooter1" runat="server" />
         </form>
+        <div class="row">
+            <uc1:ucFooter ID="ucFooter1" runat="server" />
+        </div>
     </body>
 </html>
