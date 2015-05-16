@@ -1,26 +1,41 @@
-﻿<%@ Register src="../userControls/ucFooter.ascx" tagname="ucFooter" tagprefix="uc1" %>
-<%@ Register src="../userControls/ucListadoEquipos.ascx" tagname="ucListadoEquipos" tagprefix="uc2" %>
+﻿<%@ Register Src="../userControls/ucFooter.ascx" TagName="ucFooter" TagPrefix="uc1" %>
+<%@ Register Src="../userControls/ucListadoEquipos.ascx" TagName="ucListadoEquipos" TagPrefix="uc2" %>
+
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ResumenMaster.master.cs" Inherits="WebApp.app.views.masterpages.ResumenMaster" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head runat="server">
-        <link href="../../styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <title>Resumen de Equipos</title>
-    </head>
-    <body class="container">
-       
-        <form id="form_main" runat="server">
-            <div>
-                <asp:ContentPlaceHolder ID="content" runat="server">
-        
-                </asp:ContentPlaceHolder>
-            </div>
-        </form>
-        <uc1:ucfooter id="ucFooter1" runat="server" />
-        <script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
-      
+<head runat="server">
+    <link href="../../styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <title>Resumen de Equipos</title>
+</head>
+<body class="container">
+
+        <div>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand">Epic League</a>
+                    </div>
+                    <div>
+                        <ul class="nav navbar-nav">
+                            <li><a href="/index.aspx">Inicio</a></li>
+                            <li><a href="/app/views/resumen/Default.aspx">Resumen de Equipos</a></li>
+                            <li><a href="/app/views/resumen/Contacto.aspx">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+        </div>
+
+    <asp:ContentPlaceHolder ID="content" runat="server">
+            </asp:ContentPlaceHolder>
+    <uc1:ucFooter ID="ucFooter1" runat="server" />
+    <script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+
 </body>
 </html>

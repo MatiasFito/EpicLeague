@@ -61,6 +61,7 @@
     <Resource Include="app\scripts\jquery-2.1.4.min.js" />
     <Resource Include="app\styles\bootstrap.min.css" />
     <Content Include="app\views\administracion\CreacionTorneos.aspx" />
+    <Content Include="app\views\resumen\Contacto.aspx" />
     <Content Include="app\views\resumen\Default.aspx" />
     <Content Include="app\views\userControls\ucFooter.ascx" />
     <Content Include="app\views\userControls\ucListadoEquipos.ascx" />
@@ -88,6 +89,13 @@
     </Compile>
     <Compile Include="app\views\masterpages\ResumenMaster.Master.designer.cs">
       <DependentUpon>ResumenMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="app\views\resumen\Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\views\resumen\Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
     </Compile>
     <Compile Include="app\views\resumen\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
