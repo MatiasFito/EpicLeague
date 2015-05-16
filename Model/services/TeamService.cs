@@ -37,12 +37,15 @@ namespace Model.services
             return this.teamList;
         }
 
-
         public void Add(Team team)
         {
             this.teamList.Add(team);
         }
 
+        public void AddPlayerTo(Player player, int teamId)
+        {
+            this.teamList[teamId].AddPlayer(player);
+        }
 
         public Team GetElementById(int id)
         {

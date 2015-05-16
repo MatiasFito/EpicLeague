@@ -17,7 +17,8 @@
             <asp:TextBox ID="txtbox_monto" runat="server"></asp:TextBox>
         </div>
         <div class="form-group">
-            <asp:Button ID="btn_submit_creacion_equipo" class="btn btn-primary" runat="server" Text="Enviar" />
+            <asp:Button ID="btn_submit_creacion_equipo" class="btn btn-primary" 
+                runat="server" Text="Enviar" onclick="btn_submit_creacion_equipo_Click" />
         </div>
     </form>
 </asp:Content>

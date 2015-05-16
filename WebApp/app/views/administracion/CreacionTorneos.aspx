@@ -9,13 +9,11 @@
         </div>
         <div class="form-group">
             <asp:Label ID="lbl_estado_torneo" for="dropdown_estado_torneo" Text="Estado del Torneo" runat="server"></asp:Label>
-            <asp:DropDownList ID="dropdown_estado_torneo" runat="server">
-                <asp:ListItem Selected="True" Value="Active">Activo</asp:ListItem>
-                <asp:ListItem Value="Inactive">Inactivo</asp:ListItem>
-            </asp:DropDownList>
+            <asp:CheckBox ID="chkbox_estado_torneo" runat="server" Checked="True" />
         </div>
         <div class="form-group">
-            <asp:Button ID="btn_submit_creacion_torneo" class="btn btn-primary" runat="server" Text="Enviar" />
+            <asp:Button ID="btn_submit_creacion_torneo" class="btn btn-primary" 
+                runat="server" Text="Enviar" onclick="btn_submit_creacion_torneo_Click" />
         </div>
     </form>
 </asp:Content>

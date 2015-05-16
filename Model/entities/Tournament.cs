@@ -26,6 +26,13 @@ namespace Model
             this.active = false;
         }
 
+        public Tournament(string name, bool active)
+        {
+            this.Name = name;
+            this.teams = new List<Team>();
+            this.active = active;
+        }
+
         public Tournament(string name, List<Team> teams, bool active)
         {
             Name = name;

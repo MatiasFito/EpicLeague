@@ -21,7 +21,8 @@
             </asp:DropDownList>
         </div>
         <div class="form-group">
-            <asp:Button ID="btn_submit_creacion_jugador" class="btn btn-primary" runat="server" Text="Enviar" />
+            <asp:Button ID="btn_submit_creacion_jugador" class="btn btn-primary" 
+                runat="server" Text="Enviar" onclick="btn_submit_creacion_jugador_Click" />
         </div>
     </form>
 </asp:Content>

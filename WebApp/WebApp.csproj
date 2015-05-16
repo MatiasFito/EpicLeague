@@ -62,9 +62,9 @@
     <Resource Include="app\styles\bootstrap.min.css" />
     <Content Include="app\img\estadio-background.jpg" />
     <Content Include="app\img\messi-background.jpg" />
-    <Content Include="app\styles\administraciontorneos.css" />
-    <Content Include="app\styles\main.css" />
-    <Content Include="app\styles\resumenequipos.css" />
+    <Resource Include="app\styles\administraciontorneos.css" />
+    <Resource Include="app\styles\main.css" />
+    <Resource Include="app\styles\resumenequipos.css" />
     <Content Include="app\views\administracion\CreacionEquipos.aspx" />
     <Content Include="app\views\administracion\CreacionJugadores.aspx" />
     <Content Include="app\views\administracion\CreacionTorneos.aspx" />
