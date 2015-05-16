@@ -5,9 +5,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" class="full">
 <head runat="server">
     <link href="../../styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/app/styles/resumenequipos.css" rel="Stylesheet" type="text/css" />
     <title>Resumen de Equipos</title>
 </head>
 <body class="container">
