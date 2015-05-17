@@ -9,6 +9,7 @@ namespace Model.orm
     {
         public string TeamName { get; set; }
         public string TournamentName {get; set;}
+        public bool TournamentStatus { get; set; }
 
         public TournamentTeam()
         {
@@ -20,6 +21,13 @@ namespace Model.orm
         {
             this.TeamName = team;
             this.TournamentName = tournament;
+        }
+
+        public TournamentTeam(string tournament, string team, bool tournamentStatus)
+        {
+            this.TeamName = team;
+            this.TournamentName = tournament;
+            this.TournamentStatus = tournamentStatus;
         }
     }
 }

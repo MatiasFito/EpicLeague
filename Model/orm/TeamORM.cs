@@ -20,7 +20,7 @@ namespace Model.orm
             {
                 foreach (Team team in tournament.Teams)
                 {
-                    tournaments.Add(new TournamentTeam(tournament.Name, team.Name));
+                    tournaments.Add(new TournamentTeam(tournament.Name, team.Name, tournament.IsActive()));
                 }
             }
         }
