@@ -60,6 +60,7 @@
     <Resource Include="app\scripts\bootstrap.min.js" />
     <Resource Include="app\scripts\jquery-2.1.4.min.js" />
     <Resource Include="app\styles\bootstrap.min.css" />
+    <Content Include="app\img\epicleagueescudo.svg" />
     <Content Include="app\img\estadio-background.jpg" />
     <Content Include="app\img\messi-background.jpg" />
     <Resource Include="app\styles\administraciontorneos.css" />

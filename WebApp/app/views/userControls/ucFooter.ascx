@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucFooter.ascx.cs" Inherits="WebApp.App.view.userControls.ucFooter" %>
-<nav class="navbar navbar-default navbar-fixed-bottom footer">
+<nav class="navbar navbar-default navbar-fixed-bottom footer col-lg-12">
     <p>
         Universidad Nacional de La Matanza. 
         Dpto. de Ingeniería e Investigaciones Tecnológicas. 

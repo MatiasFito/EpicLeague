@@ -10,15 +10,16 @@
         <link href="/app/styles/main.css" rel="Stylesheet" type="text/css" />
         <title>Inicio</title>
     </head>
-    <body class="container">
+    <body class="container-fluid">
         <form id="form_index" runat="server">
             <div class="row">
-                <h1> Bienvenido a la liga </h1>
-                <h3> Seleccione una opcion para comenzar</h3>
+                <div class="col-lg-12">
+                    <img class="img-responsive center-block logo" src="/app/img/epicleagueescudo.svg" />
+                </div>
             </div>
             <div class="row">
                 <asp:Button class="btn btn-primary col-lg-4" Text="Administracion Equipos" runat="server" ID="btn_administracion_equipos" OnClick="btn_administracion_equipos_Click" />
-                <span class="col-lg-1"></span>
+                <span class="col-lg-4"></span>
                 <asp:Button class="btn btn-primary col-lg-4" Text="Resumen Equipos" runat="server" ID="btn_resumen_equipos" OnClick="btn_resumen_equipos_Click" />
             </div>
         </form>

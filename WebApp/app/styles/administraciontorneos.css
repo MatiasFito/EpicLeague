@@ -37,3 +37,27 @@ body {
   border:none;
 }
 
+.navbar {
+    background: black;
+	color: white;
+    border-color:greenyellow;
+
+	/* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+li:hover {
+    color:white;
+    background:green;
+    border-color:greenyellow;
+}
+
+input, select{ background-color:black;
+}
+
+.navbar-default .navbar-nav>li>a{color:white;
+}
