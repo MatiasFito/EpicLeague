@@ -18,9 +18,12 @@
                 </div>
             </div>
             <div class="row">
-                <asp:Button class="btn btn-primary col-lg-4" Text="Administracion Equipos" runat="server" ID="btn_administracion_equipos" OnClick="btn_administracion_equipos_Click" />
-                <span class="col-lg-4"></span>
-                <asp:Button class="btn btn-primary col-lg-4" Text="Resumen Equipos" runat="server" ID="btn_resumen_equipos" OnClick="btn_resumen_equipos_Click" />
+                <div class="col-lg-6">
+                    <asp:Button class="btn btn-primary center-block" Text="Administracion Equipos" runat="server" ID="btn_administracion_equipos" OnClick="btn_administracion_equipos_Click" />
+                </div>
+                <div class="col-lg-6">
+                    <asp:Button class="btn btn-primary center-block" Text="Resumen Equipos" runat="server" ID="btn_resumen_equipos" OnClick="btn_resumen_equipos_Click" />
+                </div>
             </div>
         </form>
         <div class="row">

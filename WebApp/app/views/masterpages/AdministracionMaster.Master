@@ -12,12 +12,17 @@
     <body class="container">
 	    <div>
 		    <meta name="viewport" content="width=device-width, initial-scale=1" />
-		    <nav class="navbar navbar-default">
+		    <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
 	            <div class="navbar-header">
+                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span> 
+                          </button>
 	                <a class="navbar-brand" href="/index.aspx">Epic League</a>
 	            </div>
-	            <div>
+	            <div class="collapse navbar-collapse" id="myNavbar">
 	                <ul class="nav navbar-nav">
 		                <li><a href="/app/views/administracion/CreacionTorneos.aspx">Creaci&oacute;n de Torneos</a></li>
 		                <li><a href="/app/views/administracion/CreacionEquipos.aspx">Creaci&oacute;n de Equipos</a></li>
