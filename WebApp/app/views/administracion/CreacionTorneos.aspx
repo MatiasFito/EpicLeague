@@ -6,6 +6,9 @@
         <div class="form-group">
             <asp:Label ID="lbl_nombre_torneo" for="txtbox_nombre_torneo" Text="Nombre del Torneo" runat="server"></asp:Label>
             <asp:TextBox ID="txtbox_nombre_torneo" runat="server"></asp:TextBox>
+            <asp:RegularExpressionValidator
+                ID="TournamentNameValidator" runat="server" ControlToValidate="txtbox_nombre_torneo" ValidationExpression="^[a-zA-Z]+[a-zA-Z\ ]*$" ErrorMessage="El nombre del torneo solo puede contener letras y espacios"></asp:RegularExpressionValidator>
+            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtbox_nombre_torneo" ErrorMessage="El nombre del torneo es un campo requerido"></asp:RequiredFieldValidator>
         </div>
         <div class="form-group">
             <asp:Label ID="lbl_estado_torneo" for="dropdown_estado_torneo" Text="Estado del Torneo" runat="server"></asp:Label>
