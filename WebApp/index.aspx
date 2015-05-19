@@ -13,7 +13,7 @@
     <body class="container-fluid">
         <form id="form_index" runat="server">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-xs-12">
                     <img class="img-responsive center-block logo" src="/app/img/epicleagueescudo.svg" />
                 </div>
             </div>
