@@ -27,12 +27,14 @@ namespace WebApp.app.views.administracion
         protected void btn_submit_creacion_equipo_Click(object sender, EventArgs e)
         {
             string teamName = txtbox_nombre_equipo.Text;
-            int tournamentId = Convert.ToInt32(dropdown_torneo.SelectedValue);
-
             Team newTeam = new Team(teamName);
-
-            tournamentService.AddTeamAt(newTeam, tournamentId);
             teamService.Add(newTeam);
+
+            if (dropdown_torneo.SelectedValue != string.Empty)
+            {
+                int tournamentId = Convert.ToInt32(dropdown_torneo.SelectedValue);
+                tournamentService.AddTeamAt(newTeam, tournamentId);                
+            }
         }
     }
 }

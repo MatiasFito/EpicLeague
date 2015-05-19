@@ -103,6 +103,15 @@ namespace WebApp.app.views.resumen {
         protected global::System.Web.UI.WebControls.Label lbl_comentario;
         
         /// <summary>
+        /// Control txtbox_comentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbox_comentario;
+        
+        /// <summary>
         /// Control btn_submit_contact.
         /// </summary>
         /// <remarks>

@@ -16,7 +16,7 @@
                     <asp:Label class="control-label col-sm-2" ID="lbl_torneo" Text="Torneo" runat="server"></asp:Label>
                     <div class="col-sm-10">
                         <asp:DropDownList class="form-control" ID="dropdown_torneo" runat="server">
-                            <asp:ListItem>Elija Torneo</asp:ListItem>
+                            <asp:ListItem Text="Elija Torneo" Value=""></asp:ListItem>
                         </asp:DropDownList>
                     </div>
                 </div>

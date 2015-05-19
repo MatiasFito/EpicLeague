@@ -24,8 +24,9 @@
                 ErrorMessage="El campo de correo electronico es requerido"></asp:RequiredFieldValidator>
         </div>
         <div class="form-group">
-            <asp:Label ID="lbl_comentario" for="txtarea_comentario" runat="server" Text="Comentario"></asp:Label> 
-            <textarea id="txtarea_comentario" name="S1" rows="5"></textarea>
+            <asp:Label ID="lbl_comentario" for="txtbox_comentario" runat="server" Text="Comentario"></asp:Label> 
+            <asp:TextBox ID="txtbox_comentario" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtbox_comentario" ErrorMessage="El comentario es un campo requerido"></asp:RequiredFieldValidator>
         </div>
         <div class="form-group">
              <asp:Button class="btn btn-primary" Text="Enviar" runat="server" ID="btn_submit_contact"/>
