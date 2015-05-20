@@ -56,8 +56,16 @@ li:hover {
     border-color:greenyellow;
 }
 
-input, select, textarea{ background-color:black;
+.navbar-default .navbar-nav>li>a{color:white;
 }
 
-.navbar-default .navbar-nav>li>a{color:white;
+.alphadiv { background-color: rgba(0, 0, 0, 0.8);
+       border-style:groove;
+       border-radius:10px;
+       border-spacing:4px;
+       border-color:greenyellow;
+}
+
+.alert-text {
+        color: red;
 }

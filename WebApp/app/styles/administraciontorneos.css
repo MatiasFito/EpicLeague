@@ -37,6 +37,7 @@ body {
   border:none;
 }
 
+ 
 .navbar {
     background: black;
 	color: white;
@@ -64,4 +65,8 @@ li:hover {
        border-radius:10px;
        border-spacing:4px;
        border-color:greenyellow;
+}
+
+.alert-text {
+        color: red;
 }

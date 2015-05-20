@@ -3,5 +3,11 @@
 <%@ Register src="../userControls/ucListadoEquipos.ascx" tagname="ucListadoEquipos" tagprefix="uc1" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
+     <div class="alphadiv">
+        <div class="row">
+            <div class="col-lg-12">
     <uc1:ucListadoEquipos ID="ucListadoEquipos1" runat="server" />
+                </div>
+            </div>
+         </div>
 </asp:Content>
