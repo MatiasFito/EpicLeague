@@ -16,11 +16,14 @@ namespace WebApp.app.views.administracion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Tournament> tournaments = tournamentService.GetAll();
-
-            for (int i = 0; i < tournaments.Count; i++)
+            if (!IsPostBack)
             {
-                dropdown_torneo.Items.Add(new ListItem(tournaments[i].Name, i.ToString()));
+                List<Tournament> tournaments = tournamentService.GetAll();
+
+                for (int i = 0; i < tournaments.Count; i++)
+                {
+                    dropdown_torneo.Items.Add(new ListItem(tournaments[i].Name, i.ToString()));
+                }
             }
         }
 

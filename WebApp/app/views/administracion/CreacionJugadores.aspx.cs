@@ -17,9 +17,12 @@ namespace WebApp.app.views.administracion
         {
             List<Team> teams = teamService.GetAll();
 
-            for (int i = 0; i < teams.Count; i++)
+            if (!IsPostBack)
             {
-                dropdown_equipo.Items.Add(new ListItem(teams[i].Name, i.ToString()));
+                for (int i = 0; i < teams.Count; i++)
+                {
+                    dropdown_equipo.Items.Add(new ListItem(teams[i].Name, i.ToString()));
+                }
             }
         }
 

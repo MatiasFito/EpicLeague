@@ -66,6 +66,7 @@
     <Resource Include="app\styles\administraciontorneos.css" />
     <Resource Include="app\styles\main.css" />
     <Resource Include="app\styles\resumenequipos.css" />
+    <Content Include="app\scripts\index.js" />
     <Content Include="app\views\administracion\CreacionEquipos.aspx" />
     <Content Include="app\views\administracion\CreacionJugadores.aspx" />
     <Content Include="app\views\administracion\CreacionTorneos.aspx" />

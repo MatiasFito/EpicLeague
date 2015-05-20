@@ -8,24 +8,24 @@
     <head runat="server">
         <link href="/app/styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="/app/styles/main.css" rel="Stylesheet" type="text/css" />
+        <script type="text/javascript" src="/app/scripts/jquery-2.1.4.min.js"> </script>
+        <script type="text/javascript" src="/app/scripts/index.js"> </script>
         <title>Inicio</title>
     </head>
     <body class="container-fluid">
-        <form id="form_index" runat="server">
-            <div class="row">
-                <div class="col-xs-12">
-                    <img class="img-responsive center-block logo" src="/app/img/epicleagueescudo.svg" />
-                </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <img class="img-responsive center-block logo" src="/app/img/epicleagueescudo.svg" alt="Imagen del escudo de Epic League" />
             </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <asp:Button class="btn btn-primary center-block" Text="Administracion Equipos" runat="server" ID="btn_administracion_equipos" OnClick="btn_administracion_equipos_Click" />
-                </div>
-                <div class="col-lg-6">
-                    <asp:Button class="btn btn-primary center-block" Text="Resumen Equipos" runat="server" ID="btn_resumen_equipos" OnClick="btn_resumen_equipos_Click" />
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <button class="btn btn-primary center-block" id="btn_administracion_equipos"> Administraci&oacute;n Equipos </button>
             </div>
-        </form>
+            <div class="col-lg-6">
+                <button class="btn btn-primary center-block" id="btn_resumen_equipos"> Resumen Equipos </button>
+            </div>
+        </div>
         <div class="row">
             <uc1:ucFooter ID="ucFooter1" runat="server" />
         </div>
