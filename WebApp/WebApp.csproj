@@ -60,6 +60,11 @@
     <Resource Include="app\scripts\bootstrap.min.js" />
     <Resource Include="app\scripts\jquery-2.1.4.min.js" />
     <Resource Include="app\styles\bootstrap.min.css" />
+    <Content Include="app\img\camisa_1.svg" />
+    <Content Include="app\img\camisa_2.svg" />
+    <Content Include="app\img\camisa_3.svg" />
+    <Content Include="app\img\camisa_4.svg" />
+    <Content Include="app\img\camisa_base.svg" />
     <Content Include="app\img\epicleagueescudo.svg" />
     <Content Include="app\img\estadio-background.jpg" />
     <Content Include="app\img\messi-background.jpg" />
@@ -70,6 +75,7 @@
     <Content Include="app\views\administracion\CreacionEquipos.aspx" />
     <Content Include="app\views\administracion\CreacionJugadores.aspx" />
     <Content Include="app\views\administracion\CreacionTorneos.aspx" />
+    <Content Include="app\views\administracion\SeleccionarCamisetaBase.aspx" />
     <Content Include="app\views\resumen\Contacto.aspx" />
     <Content Include="app\views\resumen\Default.aspx" />
     <Content Include="app\views\userControls\ucFooter.ascx" />
@@ -98,6 +104,13 @@
     </Compile>
     <Compile Include="app\views\administracion\CreacionTorneos.aspx.designer.cs">
       <DependentUpon>CreacionTorneos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\views\administracion\SeleccionarCamisetaBase.aspx.cs">
+      <DependentUpon>SeleccionarCamisetaBase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\views\administracion\SeleccionarCamisetaBase.aspx.designer.cs">
+      <DependentUpon>SeleccionarCamisetaBase.aspx</DependentUpon>
     </Compile>
     <Compile Include="app\views\masterpages\AdministracionMaster.Master.cs">
       <DependentUpon>AdministracionMaster.Master</DependentUpon>

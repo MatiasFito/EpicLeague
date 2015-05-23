@@ -10,8 +10,8 @@
                         <asp:Label class="control-label col-sm-2" ID="lbl_nombre_torneo" for="txtbox_nombre_torneo" Text="Nombre del Torneo" runat="server"></asp:Label>
                         <div class="col-sm-8">
                             <asp:TextBox class="form-control" ID="txtbox_nombre_torneo" runat="server"></asp:TextBox>
-                            <asp:RegularExpressionValidator class="alert-text" SetFocusOnError="True" ID="TournamentNameValidator" runat="server" ControlToValidate="txtbox_nombre_torneo" ValidationExpression="^[a-zA-Z]+[a-zA-Z\ ]*$" ErrorMessage="El nombre del torneo solo puede contener letras y espacios"></asp:RegularExpressionValidator>
-                            <asp:RequiredFieldValidator class="alert-text" SetFocusOnError="True" runat="server" ControlToValidate="txtbox_nombre_torneo" ErrorMessage="El nombre del torneo es un campo requerido"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator class="alert-text" SetFocusOnError="True" ID="TournamentNameValidator" runat="server" ControlToValidate="txtbox_nombre_torneo" ValidationExpression="^[a-zA-Z]+[a-zA-Z\ ]*$" Display="Dynamic" Text="* El nombre del torneo solo puede contener letras y espacios" ErrorMessage="El nombre del torneo solo puede contener letras y espacios"></asp:RegularExpressionValidator>
+                            <asp:RequiredFieldValidator class="alert-text" SetFocusOnError="True" runat="server" ControlToValidate="txtbox_nombre_torneo" Display="Dynamic" Text="* El nombre del torneo es un campo requerido" ErrorMessage="El nombre del torneo es un campo requerido"></asp:RequiredFieldValidator>
                         </div>
                     </div>
                     <div class="form-group">
