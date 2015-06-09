@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\DataModel.csproj", "{29FFE396-E041-47C3-AC54-B3C74F408FC3}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = EpicLeague.vsmdi
@@ -35,6 +37,10 @@ Global
 		{D32F48E6-ACFF-451A-A6BA-F4F8A51B347F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D32F48E6-ACFF-451A-A6BA-F4F8A51B347F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D32F48E6-ACFF-451A-A6BA-F4F8A51B347F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29FFE396-E041-47C3-AC54-B3C74F408FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FFE396-E041-47C3-AC54-B3C74F408FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FFE396-E041-47C3-AC54-B3C74F408FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29FFE396-E041-47C3-AC54-B3C74F408FC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

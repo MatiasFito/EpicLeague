@@ -53,13 +53,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PlayerServiceTests.cs" />
     <Compile Include="TeamServiceTests.cs" />
+    <Compile Include="TorneoORMTest.cs" />
     <Compile Include="TournamentServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{29FFE396-E041-47C3-AC54-B3C74F408FC3}</Project>
+      <Name>DataModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{9E41F46D-B55C-47A8-B7BF-A863FD5EAD92}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

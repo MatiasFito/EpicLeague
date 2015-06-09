@@ -7,7 +7,12 @@ namespace DataModel
 {
     public class TorneoORM
     {
-        private EpicLeagueEntities contexto = new EpicLeagueEntities();
+        private EpicLeagueEntities contexto;
+
+        public TorneoORM()
+        {
+            contexto = new EpicLeagueEntities();
+        }
 
         public void ListarTorneos()
         {
