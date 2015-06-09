@@ -49,7 +49,7 @@
       <DependentUpon>EpicLeagueDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TorneoORM.cs" />
+    <Compile Include="Torneo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="EpicLeagueDataModel.edmx">

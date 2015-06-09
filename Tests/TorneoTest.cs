@@ -11,19 +11,19 @@ namespace Tests
     /// Descripción resumida de TorneoORMTest
     /// </summary>
     [TestClass]
-    public class TorneoORMTest
+    public class TorneoTest
     {
-        TorneoORM torneoORM;
+        Torneo torneo;
 
-        public TorneoORMTest()
+        public TorneoTest()
         {
-            torneoORM = new TorneoORM();
+            torneo = new Torneo();
         }
 
         [TestMethod]
         public void ListarTorneosDeberiaListarDosTorneos()
         {
-            torneoORM.ListarTorneos();
+            torneo.ListarTodosLosTorneos();
         }
     }
 }
