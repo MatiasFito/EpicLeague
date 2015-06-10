@@ -23,7 +23,8 @@ namespace Tests
         [TestMethod]
         public void ListarTorneosDeberiaListarDosTorneos()
         {
-            torneo.ListarTodosLosTorneos();
+            List<Torneo> torneos = torneo.ListarTodosLosTorneos();
+            Assert.AreEqual(2, torneos.Count);
         }
     }
 }

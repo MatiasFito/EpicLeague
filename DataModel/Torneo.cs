@@ -20,14 +20,11 @@ namespace DataModel
             }
         }
 
-        public void ListarTodosLosTorneos()
+        public List<Torneo> ListarTodosLosTorneos()
         {
             var torneos = from t in Entidades.Torneo
                           select t;
-            foreach (var torneo in torneos)
-            {
-                Console.WriteLine(torneo.Nombre);
-            }
+            return torneos.ToList<Torneo>();
         }
     }
 }
