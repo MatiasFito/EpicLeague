@@ -7,9 +7,6 @@ using DataModel;
 
 namespace Tests
 {
-    /// <summary>
-    /// Descripción resumida de TorneoORMTest
-    /// </summary>
     [TestClass]
     public class TorneoTest
     {
@@ -38,10 +35,12 @@ namespace Tests
         public void AgregarTorneoDeberiaAgregarUnTorneo()
         {
             int cantidadDeTorneosAntesDeAgregarUno = torneo.CantidadDeTorneos;
-            torneo.AgregarTorneo("Prueba", true);
+            Torneo torneoCreado = torneo.AgregarTorneo("Prueba", false);
             Assert.AreEqual(cantidadDeTorneosAntesDeAgregarUno + 1, torneo.CantidadDeTorneos);
+            torneo.EliminarTorneo(torneoCreado.Id);
         }
 
+        /*
         [TestMethod]
         public void EliminarTorneoDeberiaEliminarUnTorneo()
         {
@@ -50,6 +49,6 @@ namespace Tests
             torneo.EliminarTorneo(IdTorneoAEliminar);
             Assert.AreEqual(cantidadDeTorneosAntesDeEliminarUno - 1, torneo.CantidadDeTorneos);
         }
-
+        */
     }
 }
