@@ -39,16 +39,5 @@ namespace Tests
             Assert.AreEqual(cantidadDeTorneosAntesDeAgregarUno + 1, torneo.CantidadDeTorneos);
             torneo.EliminarTorneo(torneoCreado.Id);
         }
-
-        /*
-        [TestMethod]
-        public void EliminarTorneoDeberiaEliminarUnTorneo()
-        {
-            int cantidadDeTorneosAntesDeEliminarUno = torneo.CantidadDeTorneos;
-            int IdTorneoAEliminar = torneo.CantidadDeTorneos - 1;
-            torneo.EliminarTorneo(IdTorneoAEliminar);
-            Assert.AreEqual(cantidadDeTorneosAntesDeEliminarUno - 1, torneo.CantidadDeTorneos);
-        }
-        */
     }
 }
