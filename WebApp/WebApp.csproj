@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -72,6 +73,7 @@
     <Resource Include="app\styles\main.css" />
     <Resource Include="app\styles\resumenequipos.css" />
     <Content Include="app\scripts\index.js" />
+    <Content Include="app\services\EquipoService.asmx" />
     <Content Include="app\views\administracion\CreacionEquipos.aspx" />
     <Content Include="app\views\administracion\CreacionJugadores.aspx" />
     <Content Include="app\views\administracion\CreacionTorneos.aspx" />
@@ -84,6 +86,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="app\services\EquipoService.asmx.cs">
+      <DependentUpon>EquipoService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="app\views\administracion\CreacionEquipos.aspx.cs">
       <DependentUpon>CreacionEquipos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -174,6 +180,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{29FFE396-E041-47C3-AC54-B3C74F408FC3}</Project>
+      <Name>DataModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{9e41f46d-b55c-47a8-b7bf-a863fd5ead92}</Project>
       <Name>Model</Name>

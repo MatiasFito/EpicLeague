@@ -1,5 +1,4 @@
 ﻿using Model;
-using Model.services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,22 +13,6 @@ namespace WebApp.app.views.userControls
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        public Dictionary<Team, Tournament> getData()
-        {
-            TournamentService tournamentService = TournamentService.getInstance();
-            List<Tournament> tournaments = tournamentService.GetAll();
-            Dictionary<Team, Tournament> teamTableSource = new Dictionary<Team, Tournament>();
-
-            foreach (Tournament tournament in tournaments)
-            {
-                foreach (Team team in tournament.Teams)
-                {
-                    teamTableSource.Add(team, tournament);
-                }
-            }
-            return teamTableSource;
         }
     }
 }
