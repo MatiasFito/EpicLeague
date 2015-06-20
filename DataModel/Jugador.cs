@@ -61,5 +61,25 @@ namespace DataModel
             }
             return resultado;
         }
+
+        public int ActualizarJugador(int idJugador, string nombre, string apellido, int edad, int idEquipo)
+        {
+            int resultado = 0;
+            Jugador jugadorActualizado = new Jugador();
+            jugadorActualizado.Id = idJugador;
+            jugadorActualizado.Nombre = nombre;
+            jugadorActualizado.Apellido = apellido;
+            jugadorActualizado.Edad = edad;
+            jugadorActualizado.IdEquipo = idEquipo;
+            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Jugador", "Id", idJugador);
+            object jugadorParaActualizar;
+            if (Entidades.TryGetObjectByKey(key, out jugadorParaActualizar))
+            {
+                Entidades.ApplyCurrentValues(key.EntitySetName, jugadorActualizado);
+                resultado = Entidades.SaveChanges();
+            }
+
+            return resultado;
+        }
     }
 }

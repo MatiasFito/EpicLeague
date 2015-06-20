@@ -60,5 +60,24 @@ namespace DataModel
             }
             return resultado;
         }
+
+        public int ActualizarContacto(int idContacto, string nombreCompleto, string email, string comentario)
+        {
+            int resultado = 0;
+            Contacto contactoActualizado = new Contacto();
+            contactoActualizado.Id = idContacto;
+            contactoActualizado.NombreCompleto = nombreCompleto;
+            contactoActualizado.Email = email;
+            contactoActualizado.Comentario = comentario;
+            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Contacto", "Id", idContacto);
+            object contactoParaActualizar;
+            if (Entidades.TryGetObjectByKey(key, out contactoParaActualizar))
+            {
+                Entidades.ApplyCurrentValues(key.EntitySetName, contactoActualizado);
+                resultado = Entidades.SaveChanges();
+            }
+
+            return resultado;
+        }
     }
 }

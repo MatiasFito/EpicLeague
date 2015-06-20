@@ -31,5 +31,12 @@ namespace Tests
             Assert.AreEqual(cantidadDeContactosAntesDeAgregarUno + 1, contacto.CantidadDeContactos);
             contacto.EliminarContacto(contactoCreado.Id);
         }
+
+        [TestMethod]
+        public void ActualizarContactoDeberiaActualizarUnContacto()
+        {
+            int resultado = contacto.ActualizarContacto(0, "Contacto Actualizado", "actualizado@gmail.com", "Comentario actualizado");
+            Assert.AreEqual(1, resultado);
+        }
     }
 }

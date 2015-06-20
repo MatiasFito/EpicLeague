@@ -39,5 +39,12 @@ namespace Tests
             Assert.AreEqual(cantidadDeEquiposAntesDeAgregarUno + 1, equipo.CantidadDeEquipos);
             equipo.EliminarEquipo(equipoAgregado.Id);
         }
+
+        [TestMethod]
+        public void ActualizarEquipoDeberiaActualizarUnEquipo()
+        {
+            int resultado = equipo.ActualizarEquipo(4, "Actualizado", 50, 2);
+            Assert.AreEqual(1, resultado);
+        }
     }
 }

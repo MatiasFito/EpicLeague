@@ -39,5 +39,12 @@ namespace Tests
             Assert.AreEqual(cantidadDeTorneosAntesDeAgregarUno + 1, torneo.CantidadDeTorneos);
             torneo.EliminarTorneo(torneoCreado.Id);
         }
+
+        [TestMethod]
+        public void ActualizarTorneoDeberiaActualizarUnTorneo()
+        {
+            int resultado = torneo.ActualizarTorneo(2, "Actualizado", false);
+            Assert.AreEqual(1, resultado);
+        }
     }
 }

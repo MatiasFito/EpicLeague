@@ -28,10 +28,10 @@ namespace DataModel
             }
         }
 
-        public List<Equipo> ListarEquipos(bool IncluirEquiposDeTorneosInactivos)
+        public List<Equipo> ListarEquipos(bool IncluirEquiposDeEquiposInactivos)
         {
             List<Equipo> equipos;
-            if (IncluirEquiposDeTorneosInactivos)
+            if (IncluirEquiposDeEquiposInactivos)
             {
                 var consulta =  from e in Entidades.Equipo
                                 select e;
@@ -73,6 +73,25 @@ namespace DataModel
                 Entidades.DeleteObject(equipoParaEliminar);
                 resultado = Entidades.SaveChanges();
             }
+            return resultado;
+        }
+
+        public int ActualizarEquipo(int idEquipo, string nombre, int montoAbonado, int idTorneo)
+        {
+            int resultado = 0;
+            Equipo equipoActualizado = new Equipo();
+            equipoActualizado.Id = idEquipo;
+            equipoActualizado.Nombre = nombre;
+            equipoActualizado.MontoAbonado = montoAbonado;
+            equipoActualizado.IdTorneo = idTorneo;
+            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Equipo", "Id", idEquipo);
+            object equipoParaActualizar;
+            if (Entidades.TryGetObjectByKey(key, out equipoParaActualizar))
+            {
+                Entidades.ApplyCurrentValues(key.EntitySetName, equipoActualizado);
+                resultado = Entidades.SaveChanges();
+            }
+
             return resultado;
         }
     }

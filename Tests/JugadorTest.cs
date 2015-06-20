@@ -32,5 +32,12 @@ namespace Tests
             Assert.AreEqual(cantidadDeJugadorsAntesDeAgregarUno + 1, jugador.CantidadDeJugadores);
             jugador.EliminarJugador(jugadorCreado.Id);
         }
+
+        [TestMethod]
+        public void ActualizarJugadorDeberiaActualizarUnJugador()
+        {
+            int resultado = jugador.ActualizarJugador(7, "Jugador", "Actualizado", 8, 3);
+            Assert.AreEqual(1, resultado);
+        }
     }
 }
