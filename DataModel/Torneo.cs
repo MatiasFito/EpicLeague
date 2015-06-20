@@ -20,13 +20,10 @@ namespace DataModel
             }
         }
 
-        public int CantidadDeTorneos
+        public int CantidadDeTorneos()
         {
-            get
-            {
-                return this.ListarTodosLosTorneos().Count;
-            }
-        }        
+            return this.ListarTodosLosTorneos().Count;
+        }     
 
         public List<Torneo> ListarTodosLosTorneos()
         {
@@ -56,7 +53,7 @@ namespace DataModel
         public Torneo AgregarTorneo(string nombre, bool activo)
         {
             Torneo torneo = new Torneo();
-            torneo.Id = this.CantidadDeTorneos;
+            torneo.Id = this.CantidadDeTorneos();
             torneo.Nombre = nombre;
             torneo.Activo = activo;
 

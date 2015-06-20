@@ -34,9 +34,9 @@ namespace Tests
         [TestMethod]
         public void AgregarTorneoDeberiaAgregarUnTorneo()
         {
-            int cantidadDeTorneosAntesDeAgregarUno = torneo.CantidadDeTorneos;
+            int cantidadDeTorneosAntesDeAgregarUno = torneo.CantidadDeTorneos();
             Torneo torneoCreado = torneo.AgregarTorneo("Prueba", false);
-            Assert.AreEqual(cantidadDeTorneosAntesDeAgregarUno + 1, torneo.CantidadDeTorneos);
+            Assert.AreEqual(cantidadDeTorneosAntesDeAgregarUno + 1, torneo.CantidadDeTorneos());
             torneo.EliminarTorneo(torneoCreado.Id);
         }
 
