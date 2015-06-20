@@ -5,33 +5,67 @@
         <div class="row">
             <div class="col-lg-12">
                 <h2>Crear un nuevo torneo</h2>
-                <form role="form" class="form-horizontal" id="form_creacion_torneo" runat="server">
-                    <div class="form-group">
-                        <asp:Label class="control-label col-sm-2" ID="lbl_nombre_torneo" for="txtbox_nombre_torneo" Text="Nombre del Torneo" runat="server"></asp:Label>
-                        <div class="col-sm-8">
-                            <asp:TextBox class="form-control" ID="txtbox_nombre_torneo" runat="server"></asp:TextBox>
-                            <asp:RegularExpressionValidator class="alert-text" SetFocusOnError="True" ID="TournamentNameValidator" runat="server" ControlToValidate="txtbox_nombre_torneo" ValidationExpression="^[a-zA-Z]+[a-zA-Z\ ]*$" Display="Dynamic" Text="* El nombre del torneo solo puede contener letras y espacios" ErrorMessage="El nombre del torneo solo puede contener letras y espacios"></asp:RegularExpressionValidator>
-                            <asp:RequiredFieldValidator class="alert-text" SetFocusOnError="True" runat="server" ControlToValidate="txtbox_nombre_torneo" Display="Dynamic" Text="* El nombre del torneo es un campo requerido" ErrorMessage="El nombre del torneo es un campo requerido"></asp:RequiredFieldValidator>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <asp:Label class="control-label col-sm-2" ID="lbl_estado_torneo" for="dropdown_estado_torneo" Text="Estado del Torneo" runat="server"></asp:Label>
-                        <div class="col-sm-8">
-                            <asp:CheckBox ID="chkbox_estado_torneo" runat="server" Checked="True" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <span class="control-label col-sm-2"></span>
-                        <div class="col-sm-8">
-                            <asp:ValidationSummary runat="server" control-label="col-sm-8" ID="ValidationSummary1" DisplayMode="BulletList" ShowMessageBox="False" ShowSummary="True" CssClass="alert alert-danger" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="control-label col-sm-2">
-                            <asp:Button ID="btn_submit_creacion_torneo" class="btn btn-primary"
-                                runat="server" Text="Enviar" OnClick="btn_submit_creacion_torneo_Click" />
-                        </div>
-                    </div>
+                <form runat="server">
+                    <asp:GridView 
+                        ID="GridViewTorneos" runat="server" 
+                        AutoGenerateColumns="False" DataSourceID="OdsTorneos" DataKeyNames="Id">
+                        <Columns>
+                            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                            <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" ReadOnly="true" />
+                            <asp:BoundField DataField="Nombre" HeaderText="Nombre" 
+                                SortExpression="Nombre" />
+                            <asp:CheckBoxField DataField="Activo" HeaderText="Activo" 
+                                SortExpression="Activo" />
+                        </Columns>
+                    </asp:GridView>
+                    <asp:DetailsView ID="DetailsViewTorneos" runat="server" 
+                        AutoGenerateRows="False" DataSourceID="OdsTorneos" DefaultMode="Insert" 
+                        Height="50px" Width="125px" DataKeyNames="Id">
+                        <Fields>
+                            <asp:TemplateField HeaderText="Id" SortExpression="Id">
+                                <InsertItemTemplate>
+                                    <asp:TextBox ID="InsertId" runat="server" Text='<%# Bind("Id") %>'></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                        ControlToValidate="InsertId" ErrorMessage="El Id es un campo requerido">*</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                                        ControlToValidate="InsertId" 
+                                        ErrorMessage="El campo 'Id' solo puede estar compuesto por  numeros positivos" 
+                                        ValidationExpression="^[0-9]+$">*</asp:RegularExpressionValidator>
+                                </InsertItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Nombre" SortExpression="Nombre">
+                                <InsertItemTemplate>
+                                    <asp:TextBox ID="InsertNombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                        ControlToValidate="InsertNombre" ErrorMessage="El campo 'Nombre' es requerido">*</asp:RequiredFieldValidator>
+                                </InsertItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Activo" SortExpression="Activo">
+                                <InsertItemTemplate>
+                                    <asp:CheckBox ID="InsertActivo" runat="server" Checked='<%# Bind("Activo") %>' />
+                                </InsertItemTemplate>
+                            </asp:TemplateField>
+                            <asp:CommandField ShowInsertButton="True" />
+                        </Fields>
+                    </asp:DetailsView>
+                    <asp:ObjectDataSource ID="OdsTorneos" runat="server" 
+                        DeleteMethod="EliminarTorneo" InsertMethod="AgregarTorneo" 
+                        SelectMethod="ListarTodosLosTorneos" TypeName="DataModel.Torneo" 
+                        UpdateMethod="ActualizarTorneo">
+                        <DeleteParameters>
+                            <asp:Parameter Name="id" Type="Int32" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="id" Type="Int32" />
+                            <asp:Parameter Name="nombre" Type="String" />
+                            <asp:Parameter Name="activo" Type="Boolean" />
+                        </InsertParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="id" Type="Int32" />
+                            <asp:Parameter Name="nombre" Type="String" />
+                            <asp:Parameter Name="activo" Type="Boolean" />
+                        </UpdateParameters>
+                    </asp:ObjectDataSource>
                 </form>
             </div>
         </div>

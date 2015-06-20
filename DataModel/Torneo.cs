@@ -56,7 +56,6 @@ namespace DataModel
             torneo.Id = id;
             torneo.Nombre = nombre;
             torneo.Activo = activo;
-
             Entidades.Torneo.AddObject(torneo);
             Entidades.SaveChanges();
             return torneo;

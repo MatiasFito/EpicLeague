@@ -10,7 +10,8 @@
         <form id="form1" runat="server">
             <div>
                  
-                Listado de torneos<asp:GridView 
+                Listado de torneos
+                <asp:GridView 
                     ID="GridViewTorneos" runat="server" 
                     AutoGenerateColumns="False" DataSourceID="OdsTorneos" DataKeyNames="Id">
                     <Columns>

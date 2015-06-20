@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebApp.app.views.administracion
+namespace WebApp.app.test
 {
-    public partial class SeleccionarCamisetaBase : System.Web.UI.Page
+    public partial class backup : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

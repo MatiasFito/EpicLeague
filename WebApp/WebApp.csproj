@@ -74,11 +74,11 @@
     <Resource Include="app\styles\resumenequipos.css" />
     <Content Include="app\scripts\index.js" />
     <Content Include="app\services\EquipoService.asmx" />
+    <Content Include="app\test\backup.aspx" />
     <Content Include="app\test\test.aspx" />
     <Content Include="app\views\administracion\CreacionEquipos.aspx" />
     <Content Include="app\views\administracion\CreacionJugadores.aspx" />
     <Content Include="app\views\administracion\CreacionTorneos.aspx" />
-    <Content Include="app\views\administracion\SeleccionarCamisetaBase.aspx" />
     <Content Include="app\views\resumen\Contacto.aspx" />
     <Content Include="app\views\resumen\Default.aspx" />
     <Content Include="app\views\userControls\ucFooter.ascx" />
@@ -90,6 +90,13 @@
     <Compile Include="app\services\EquipoService.asmx.cs">
       <DependentUpon>EquipoService.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="app\test\backup.aspx.cs">
+      <DependentUpon>backup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\test\backup.aspx.designer.cs">
+      <DependentUpon>backup.aspx</DependentUpon>
     </Compile>
     <Compile Include="app\test\test.aspx.cs">
       <DependentUpon>test.aspx</DependentUpon>
@@ -118,13 +125,6 @@
     </Compile>
     <Compile Include="app\views\administracion\CreacionTorneos.aspx.designer.cs">
       <DependentUpon>CreacionTorneos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="app\views\administracion\SeleccionarCamisetaBase.aspx.cs">
-      <DependentUpon>SeleccionarCamisetaBase.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\views\administracion\SeleccionarCamisetaBase.aspx.designer.cs">
-      <DependentUpon>SeleccionarCamisetaBase.aspx</DependentUpon>
     </Compile>
     <Compile Include="app\views\masterpages\AdministracionMaster.Master.cs">
       <DependentUpon>AdministracionMaster.Master</DependentUpon>
