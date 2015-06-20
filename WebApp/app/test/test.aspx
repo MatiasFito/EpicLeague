@@ -15,8 +15,7 @@
                     AutoGenerateColumns="False" DataSourceID="OdsTorneos" DataKeyNames="Id">
                     <Columns>
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                        <asp:BoundField DataField="Id" HeaderText="Id" 
-                            SortExpression="Id" />
+                        <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" ReadOnly="true" />
                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" 
                             SortExpression="Nombre" />
                         <asp:CheckBoxField DataField="Activo" HeaderText="Activo" 
@@ -48,7 +47,7 @@
                         <asp:Parameter Name="activo" Type="Boolean" />
                     </InsertParameters>
                     <UpdateParameters>
-                        <asp:Parameter Name="idTorneo" Type="Int32" />
+                        <asp:Parameter Name="id" Type="Int32" />
                         <asp:Parameter Name="nombre" Type="String" />
                         <asp:Parameter Name="activo" Type="Boolean" />
                     </UpdateParameters>
