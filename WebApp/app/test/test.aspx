@@ -10,9 +10,11 @@
         <form id="form1" runat="server">
             <div>
                  
-                Listado de torneos<asp:GridView ID="GridViewTorneos" runat="server" 
-                    AutoGenerateColumns="False" DataSourceID="OdsTorneos">
+                Listado de torneos<asp:GridView 
+                    ID="GridViewTorneos" runat="server" 
+                    AutoGenerateColumns="False" DataSourceID="OdsTorneos" DataKeyNames="Id">
                     <Columns>
+                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                         <asp:BoundField DataField="Id" HeaderText="Id" 
                             SortExpression="Id" />
                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" 
@@ -23,12 +25,14 @@
                 </asp:GridView>
                 <asp:DetailsView ID="DetailsViewTorneos" runat="server" 
                     AutoGenerateRows="False" DataSourceID="OdsTorneos" DefaultMode="Insert" 
-                    Height="50px" Width="125px">
+                    Height="50px" Width="125px" DataKeyNames="Id">
                     <Fields>
+                        <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" 
                             SortExpression="Nombre" />
                         <asp:CheckBoxField DataField="Activo" HeaderText="Activo" 
                             SortExpression="Activo" />
+                        <asp:CommandField ShowInsertButton="True" />
                     </Fields>
                 </asp:DetailsView>
                 <asp:ObjectDataSource ID="OdsTorneos" runat="server" 
@@ -36,9 +40,10 @@
                     SelectMethod="ListarTodosLosTorneos" TypeName="DataModel.Torneo" 
                     UpdateMethod="ActualizarTorneo">
                     <DeleteParameters>
-                        <asp:Parameter Name="idTorneo" Type="Int32" />
+                        <asp:Parameter Name="id" Type="Int32" />
                     </DeleteParameters>
                     <InsertParameters>
+                        <asp:Parameter Name="id" Type="Int32" />
                         <asp:Parameter Name="nombre" Type="String" />
                         <asp:Parameter Name="activo" Type="Boolean" />
                     </InsertParameters>

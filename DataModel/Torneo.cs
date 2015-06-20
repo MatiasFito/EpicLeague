@@ -50,10 +50,10 @@ namespace DataModel
             return torneos;
         }
 
-        public Torneo AgregarTorneo(string nombre, bool activo)
+        public Torneo AgregarTorneo(int id, string nombre, bool activo)
         {
             Torneo torneo = new Torneo();
-            torneo.Id = this.CantidadDeTorneos();
+            torneo.Id = id;
             torneo.Nombre = nombre;
             torneo.Activo = activo;
 
@@ -62,10 +62,10 @@ namespace DataModel
             return torneo;
         }
 
-        public int EliminarTorneo(int idTorneo)
+        public int EliminarTorneo(int id)
         {
             int resultado = 0;
-            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Torneo", "Id", idTorneo);
+            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Torneo", "Id", id);
             object torneoParaEliminar;
             if (Entidades.TryGetObjectByKey(key, out torneoParaEliminar))
             {
@@ -75,14 +75,14 @@ namespace DataModel
             return resultado;
         }
 
-        public int ActualizarTorneo(int idTorneo, string nombre, bool activo)
+        public int ActualizarTorneo(int id, string nombre, bool activo)
         {
             int resultado = 0;
             Torneo torneoActualizado = new Torneo();
-            torneoActualizado.Id = idTorneo;
+            torneoActualizado.Id = id;
             torneoActualizado.Nombre = nombre;
             torneoActualizado.Activo = activo;
-            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Torneo", "Id", idTorneo);
+            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Torneo", "Id", id);
             object torneoParaActualizar;
             if(Entidades.TryGetObjectByKey(key, out torneoParaActualizar))
             {
