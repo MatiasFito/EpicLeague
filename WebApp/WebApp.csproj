@@ -74,8 +74,6 @@
     <Resource Include="app\styles\resumenequipos.css" />
     <Content Include="app\scripts\index.js" />
     <Content Include="app\services\EquipoService.asmx" />
-    <Content Include="app\test\backup.aspx" />
-    <Content Include="app\test\test.aspx" />
     <Content Include="app\views\administracion\CreacionEquipos.aspx" />
     <Content Include="app\views\administracion\CreacionJugadores.aspx" />
     <Content Include="app\views\administracion\CreacionTorneos.aspx" />
@@ -84,26 +82,14 @@
     <Content Include="app\views\userControls\ucFooter.ascx" />
     <Content Include="app\views\userControls\ucListadoEquipos.ascx" />
     <Content Include="index.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app\services\EquipoService.asmx.cs">
       <DependentUpon>EquipoService.asmx</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="app\test\backup.aspx.cs">
-      <DependentUpon>backup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\test\backup.aspx.designer.cs">
-      <DependentUpon>backup.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="app\test\test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\test\test.aspx.designer.cs">
-      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="app\views\administracion\CreacionEquipos.aspx.cs">
       <DependentUpon>CreacionEquipos.aspx</DependentUpon>

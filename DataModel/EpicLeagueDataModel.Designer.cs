@@ -19,8 +19,8 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region Metadatos de relaciones en EDM
 
-[assembly: EdmRelationshipAttribute("EpicLeagueDataModel", "FK_Equipo_Torneo", "Torneo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataModel.Torneo), "Equipo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataModel.Equipo), true)]
-[assembly: EdmRelationshipAttribute("EpicLeagueDataModel", "FK_Jugador_Equipo", "Equipo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DataModel.Equipo), "Jugador", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataModel.Jugador), true)]
+[assembly: EdmRelationshipAttribute("PW3_20152C_TP2_TorneosModel", "FK_Equipo_Torneo", "Torneo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataModel.Torneo), "Equipo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataModel.Equipo), true)]
+[assembly: EdmRelationshipAttribute("PW3_20152C_TP2_TorneosModel", "FK_Jugador_Equipo_Cascade", "Equipo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DataModel.Equipo), "Jugador", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataModel.Jugador), true)]
 
 #endregion
 
@@ -183,7 +183,7 @@ namespace DataModel
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="EpicLeagueDataModel", Name="Contacto")]
+    [EdmEntityTypeAttribute(NamespaceName="PW3_20152C_TP2_TorneosModel", Name="Contacto")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Contacto : EntityObject
@@ -318,7 +318,7 @@ namespace DataModel
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="EpicLeagueDataModel", Name="Equipo")]
+    [EdmEntityTypeAttribute(NamespaceName="PW3_20152C_TP2_TorneosModel", Name="Equipo")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Equipo : EntityObject
@@ -452,16 +452,16 @@ namespace DataModel
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("EpicLeagueDataModel", "FK_Equipo_Torneo", "Torneo")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3_20152C_TP2_TorneosModel", "FK_Equipo_Torneo", "Torneo")]
         public Torneo Torneo
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Torneo>("EpicLeagueDataModel.FK_Equipo_Torneo", "Torneo").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Torneo>("PW3_20152C_TP2_TorneosModel.FK_Equipo_Torneo", "Torneo").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Torneo>("EpicLeagueDataModel.FK_Equipo_Torneo", "Torneo").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Torneo>("PW3_20152C_TP2_TorneosModel.FK_Equipo_Torneo", "Torneo").Value = value;
             }
         }
         /// <summary>
@@ -473,13 +473,13 @@ namespace DataModel
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Torneo>("EpicLeagueDataModel.FK_Equipo_Torneo", "Torneo");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Torneo>("PW3_20152C_TP2_TorneosModel.FK_Equipo_Torneo", "Torneo");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Torneo>("EpicLeagueDataModel.FK_Equipo_Torneo", "Torneo", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Torneo>("PW3_20152C_TP2_TorneosModel.FK_Equipo_Torneo", "Torneo", value);
                 }
             }
         }
@@ -490,18 +490,18 @@ namespace DataModel
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("EpicLeagueDataModel", "FK_Jugador_Equipo", "Jugador")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3_20152C_TP2_TorneosModel", "FK_Jugador_Equipo_Cascade", "Jugador")]
         public EntityCollection<Jugador> Jugador
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Jugador>("EpicLeagueDataModel.FK_Jugador_Equipo", "Jugador");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Jugador>("PW3_20152C_TP2_TorneosModel.FK_Jugador_Equipo_Cascade", "Jugador");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Jugador>("EpicLeagueDataModel.FK_Jugador_Equipo", "Jugador", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Jugador>("PW3_20152C_TP2_TorneosModel.FK_Jugador_Equipo_Cascade", "Jugador", value);
                 }
             }
         }
@@ -513,7 +513,7 @@ namespace DataModel
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="EpicLeagueDataModel", Name="Jugador")]
+    [EdmEntityTypeAttribute(NamespaceName="PW3_20152C_TP2_TorneosModel", Name="Jugador")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Jugador : EntityObject
@@ -675,16 +675,16 @@ namespace DataModel
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("EpicLeagueDataModel", "FK_Jugador_Equipo", "Equipo")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3_20152C_TP2_TorneosModel", "FK_Jugador_Equipo_Cascade", "Equipo")]
         public Equipo Equipo
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Equipo>("EpicLeagueDataModel.FK_Jugador_Equipo", "Equipo").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Equipo>("PW3_20152C_TP2_TorneosModel.FK_Jugador_Equipo_Cascade", "Equipo").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Equipo>("EpicLeagueDataModel.FK_Jugador_Equipo", "Equipo").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Equipo>("PW3_20152C_TP2_TorneosModel.FK_Jugador_Equipo_Cascade", "Equipo").Value = value;
             }
         }
         /// <summary>
@@ -696,13 +696,13 @@ namespace DataModel
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Equipo>("EpicLeagueDataModel.FK_Jugador_Equipo", "Equipo");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Equipo>("PW3_20152C_TP2_TorneosModel.FK_Jugador_Equipo_Cascade", "Equipo");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Equipo>("EpicLeagueDataModel.FK_Jugador_Equipo", "Equipo", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Equipo>("PW3_20152C_TP2_TorneosModel.FK_Jugador_Equipo_Cascade", "Equipo", value);
                 }
             }
         }
@@ -714,7 +714,7 @@ namespace DataModel
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="EpicLeagueDataModel", Name="Torneo")]
+    [EdmEntityTypeAttribute(NamespaceName="PW3_20152C_TP2_TorneosModel", Name="Torneo")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Torneo : EntityObject
@@ -826,18 +826,18 @@ namespace DataModel
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("EpicLeagueDataModel", "FK_Equipo_Torneo", "Equipo")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3_20152C_TP2_TorneosModel", "FK_Equipo_Torneo", "Equipo")]
         public EntityCollection<Equipo> Equipo
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Equipo>("EpicLeagueDataModel.FK_Equipo_Torneo", "Equipo");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Equipo>("PW3_20152C_TP2_TorneosModel.FK_Equipo_Torneo", "Equipo");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Equipo>("EpicLeagueDataModel.FK_Equipo_Torneo", "Equipo", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Equipo>("PW3_20152C_TP2_TorneosModel.FK_Equipo_Torneo", "Equipo", value);
                 }
             }
         }
