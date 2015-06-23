@@ -8,8 +8,9 @@
                 <form runat="server">
                     
                 <asp:GridView ID="GridViewEquipo" runat="server" AutoGenerateColumns="False" 
-                    DataSourceID="ObjectDataSourceEquipo">
+                    DataKeyNames="Id" DataSourceID="ObjectDataSourceEquipo">
                     <Columns>
+                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                         <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" 
                             SortExpression="Nombre" />
@@ -20,7 +21,8 @@
                     </Columns>
                 </asp:GridView>
                 <asp:DetailsView ID="DetailsViewEquipo" runat="server" AutoGenerateRows="False" 
-                    DataSourceID="ObjectDataSourceEquipo" Height="50px" Width="125px">
+                    DataKeyNames="Id" DataSourceID="ObjectDataSourceEquipo" DefaultMode="Insert" 
+                    Height="50px" Width="125px">
                     <Fields>
                         <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" 
@@ -29,6 +31,7 @@
                             SortExpression="MontoAbonado" />
                         <asp:BoundField DataField="IdTorneo" HeaderText="IdTorneo" 
                             SortExpression="IdTorneo" />
+                        <asp:CommandField ShowInsertButton="True" />
                     </Fields>
                 </asp:DetailsView>
                 <asp:ObjectDataSource ID="ObjectDataSourceEquipo" runat="server" 
@@ -36,9 +39,10 @@
                     SelectMethod="ListarEquipos" TypeName="DataModel.Equipo" 
                     UpdateMethod="ActualizarEquipo">
                     <DeleteParameters>
-                        <asp:Parameter Name="IdEquipo" Type="Int32" />
+                        <asp:Parameter Name="id" Type="Int32" />
                     </DeleteParameters>
                     <InsertParameters>
+                        <asp:Parameter Name="id" Type="Int32" />
                         <asp:Parameter Name="nombre" Type="String" />
                         <asp:Parameter Name="montoAbonado" Type="Int32" />
                         <asp:Parameter Name="idTorneo" Type="Int32" />
@@ -48,7 +52,7 @@
                             Type="Boolean" />
                     </SelectParameters>
                     <UpdateParameters>
-                        <asp:Parameter Name="idEquipo" Type="Int32" />
+                        <asp:Parameter Name="id" Type="Int32" />
                         <asp:Parameter Name="nombre" Type="String" />
                         <asp:Parameter Name="montoAbonado" Type="Int32" />
                         <asp:Parameter Name="idTorneo" Type="Int32" />
