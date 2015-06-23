@@ -20,12 +20,9 @@ namespace DataModel
             }
         }
         
-        public int CantidadDeEquipos
+        public int CantidadDeEquipos()
         {
-            get
-            {
-                return this.ListarEquipos(true).Count;
-            }
+            return this.ListarEquipos(true).Count;
         }
 
         public List<Equipo> ListarEquipos(bool IncluirEquiposDeEquiposInactivos)
@@ -50,10 +47,10 @@ namespace DataModel
             return equipos;
         }
 
-        public Equipo AgregarEquipo (string nombre, int montoAbonado, int idTorneo)
+        public Equipo AgregarEquipo (int id, string nombre, int montoAbonado, int idTorneo)
         {
             Equipo equipo = new Equipo();
-            equipo.Id = this.CantidadDeEquipos;
+            equipo.Id = id;
             equipo.Nombre = nombre;
             equipo.MontoAbonado = montoAbonado;
             equipo.IdTorneo = idTorneo;
@@ -63,10 +60,10 @@ namespace DataModel
             return equipo;
         }
 
-        public int EliminarEquipo(int IdEquipo)
+        public int EliminarEquipo(int id)
         {
             int resultado = 0;
-            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Equipo", "Id", IdEquipo);
+            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Equipo", "Id", id);
             object equipoParaEliminar;
             if (Entidades.TryGetObjectByKey(key, out equipoParaEliminar))
             {
@@ -76,15 +73,16 @@ namespace DataModel
             return resultado;
         }
 
-        public int ActualizarEquipo(int idEquipo, string nombre, int montoAbonado, int idTorneo)
+        public int ActualizarEquipo(int id, string nombre, int montoAbonado, int idTorneo)
         {
             int resultado = 0;
             Equipo equipoActualizado = new Equipo();
-            equipoActualizado.Id = idEquipo;
+            equipoActualizado.Id = id;
             equipoActualizado.Nombre = nombre;
             equipoActualizado.MontoAbonado = montoAbonado;
             equipoActualizado.IdTorneo = idTorneo;
-            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Equipo", "Id", idEquipo);
+            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Equipo", "Id", id);
+
             object equipoParaActualizar;
             if (Entidades.TryGetObjectByKey(key, out equipoParaActualizar))
             {

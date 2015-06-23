@@ -51,11 +51,22 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <Compile Include="ContactoTest.cs" />
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
     <Compile Include="EquipoTest.cs" />
     <Compile Include="JugadorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TorneoTest.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="TournamentServiceTests.cs" />
+=======
+    <Compile Include="Properties\AssemblyInfo.cs" />
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataModel\DataModel.csproj">
