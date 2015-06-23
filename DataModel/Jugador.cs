@@ -35,10 +35,10 @@ namespace DataModel
             return jugadores.ToList<Jugador>();
         }
 
-        public Jugador AgregarJugador(string nombre, string apellido, int edad, int idEquipo)
+        public Jugador AgregarJugador(int id, string nombre, string apellido, int edad, int idEquipo)
         {
             Jugador jugador = new Jugador();
-            jugador.Id = this.CantidadDeJugadores;
+            jugador.Id = id;
             jugador.Nombre = nombre;
             jugador.Apellido = apellido;
             jugador.Edad = edad;
@@ -49,10 +49,10 @@ namespace DataModel
             return jugador;
         }
 
-        public int EliminarJugador(int IdJugador)
+        public int EliminarJugador(int id)
         {
             int resultado = 0;
-            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Jugador", "Id", IdJugador);
+            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Jugador", "Id", id);
             object jugadorParaEliminar;
             if (Entidades.TryGetObjectByKey(key, out jugadorParaEliminar))
             {
@@ -62,16 +62,16 @@ namespace DataModel
             return resultado;
         }
 
-        public int ActualizarJugador(int idJugador, string nombre, string apellido, int edad, int idEquipo)
+        public int ActualizarJugador(int id, string nombre, string apellido, int edad, int idEquipo)
         {
             int resultado = 0;
             Jugador jugadorActualizado = new Jugador();
-            jugadorActualizado.Id = idJugador;
+            jugadorActualizado.Id = id;
             jugadorActualizado.Nombre = nombre;
             jugadorActualizado.Apellido = apellido;
             jugadorActualizado.Edad = edad;
             jugadorActualizado.IdEquipo = idEquipo;
-            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Jugador", "Id", idJugador);
+            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Jugador", "Id", id);
             object jugadorParaActualizar;
             if (Entidades.TryGetObjectByKey(key, out jugadorParaActualizar))
             {

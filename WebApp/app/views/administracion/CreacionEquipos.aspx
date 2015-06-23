@@ -6,7 +6,6 @@
 			<div class="col-lg-12">
 				<h2>Crear un nuevo equipo</h2>
                 <form runat="server">
-                    
                 <asp:GridView ID="GridViewEquipo" runat="server" AutoGenerateColumns="False" 
                     DataKeyNames="Id" DataSourceID="ObjectDataSourceEquipo">
                     <Columns>
