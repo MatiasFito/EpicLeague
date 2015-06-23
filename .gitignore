@@ -185,6 +185,10 @@ FakesAssemblies/
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
 
+# Cambios a la base de datos
+*.mdf
+*.ldf
+
 # Visual Studio 6 build log
 *.plg
 
