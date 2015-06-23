@@ -10,15 +10,43 @@
                 <asp:GridView ID="GridViewEquipo" runat="server" AutoGenerateColumns="False" 
                     DataKeyNames="Id" DataSourceID="ObjectDataSourceEquipo">
                     <Columns>
-                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                        <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" 
-                            ReadOnly="True" />
-                        <asp:BoundField DataField="Nombre" HeaderText="Nombre" 
-                            SortExpression="Nombre" />
-                        <asp:BoundField DataField="MontoAbonado" HeaderText="MontoAbonado" 
-                            SortExpression="MontoAbonado" />
-                        <asp:BoundField DataField="IdTorneo" HeaderText="IdTorneo" 
-                            SortExpression="IdTorneo" />
+                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" 
+                            ValidationGroup="EditEquipo" />
+                        <asp:TemplateField HeaderText="Id" SortExpression="Id">
+                            <EditItemTemplate>
+                                <asp:Label ID="EditEquipoId" runat="server" Text='<%# Eval("Id") %>'></asp:Label>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("Id") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Nombre" SortExpression="Nombre">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="EditEquipoNombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredEditEquipoNombre" ValidationGroup="EditEquipo" ControlToValidate="EditEquipoNombre" runat="server" Text="*" ErrorMessage="El campo Nombre es obligatorio"></asp:RequiredFieldValidator>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="MontoAbonado" SortExpression="MontoAbonado">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="EditEquipoMontoAbonado" runat="server" Text='<%# Bind("MontoAbonado") %>'></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegexEditEquipoMontoAbonado" ValidationGroup="EditEquipo" ControlToValidate="EditEquipoMontoAbonado" ValidationExpression="^[0-9]*$" runat="server" Text="*" ErrorMessage="El campo de MontoAbonado solo puede contener numeros"></asp:RegularExpressionValidator>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("MontoAbonado") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="IdTorneo" SortExpression="IdTorneo">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="EditEquipoIdTorneo" runat="server" Text='<%# Bind("IdTorneo") %>'></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegexEditEquipoIdTorneo" ValidationGroup="EditEquipo" ControlToValidate="EditEquipoIdTorneo" ValidationExpression="^[0-9]*$" runat="server" Text="*" ErrorMessage="El campo de TorneoId solo puede contener numeros"></asp:RegularExpressionValidator>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label4" runat="server" Text='<%# Bind("IdTorneo") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
                 <asp:DetailsView ID="DetailsViewEquipo" runat="server" AutoGenerateRows="False" 
@@ -77,6 +105,8 @@
                         <asp:Parameter Name="idTorneo" Type="Int32" />
                     </UpdateParameters>
                 </asp:ObjectDataSource>
+                <asp:ValidationSummary ID="ValidationSummaryEditEquipo" runat="server" 
+                        ShowMessageBox="True" ShowSummary="False" ValidationGroup="EditEquipo" />
                 <asp:ValidationSummary ID="ValidationSummaryInsertEquipo" runat="server" 
                         ShowMessageBox="True" ShowSummary="False" ValidationGroup="InsertEquipo" />
                 </form>
