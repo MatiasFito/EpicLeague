@@ -24,11 +24,11 @@ namespace DataModel
         {
             get
             {
-                return this.ListarTodosLosJugadores().Count;
+                return this.ListarJugadores().Count;
             }
         }
 
-        public List<Jugador> ListarTodosLosJugadores()
+        public List<Jugador> ListarJugadores()
         {
             var jugadores = from j in Entidades.Jugador
                             select j;
