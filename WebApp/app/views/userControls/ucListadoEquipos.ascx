@@ -1,9 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucListadoEquipos.ascx.cs" Inherits="WebApp.app.views.userControls.ucListadoEquipos" %>
 
 <form id="form_lista_equipos" runat="server">
-<!--
-<asp:GridView  class="table" ID="GridView1" runat="server" AutoGenerateColumns="False" 
-    DataSourceID="TeamListDataSource">
+
+<asp:GridView  class="table" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="TeamListDataSource">
     <Columns>
         <asp:BoundField DataField="TeamName" HeaderText="Equipo" 
             SortExpression="TeamName" />
@@ -14,7 +13,6 @@
         </asp:TemplateField>
     </Columns>
 </asp:GridView>
-<asp:ObjectDataSource ID="TeamListDataSource" runat="server" 
-    SelectMethod="GetAll"></asp:ObjectDataSource>
--->
+<asp:ObjectDataSource ID="TeamListDataSource" runat="server" SelectMethod="GetAll"></asp:ObjectDataSource>
+
 </form>

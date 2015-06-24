@@ -60,13 +60,29 @@ li:hover {
 .navbar-default .navbar-nav>li>a{color:white;
 }
 
-.alphadiv { background-color: rgba(0, 0, 0, 0.8);
-       border-style:groove;
-       border-radius:10px;
-       border-spacing:4px;
-       border-color:greenyellow;
+.alphadiv { 
+            background-color: rgba(0, 0, 0, 0.8);
+            border-style:groove;
+            border-radius:10px;
+            border-spacing:4px;
+            border-color:greenyellow;
+}
+
+.subgrupo {
+            margin:10px;
+            padding:10px;
 }
 
 .alert-text {
         color: red;
+}
+
+.table {
+    width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-color: yellowgreen;
+  border-width: 3px;
+  border-radius: 10px;
+  border-style: solid;
 }
