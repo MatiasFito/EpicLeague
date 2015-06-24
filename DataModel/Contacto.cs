@@ -20,25 +20,22 @@ namespace DataModel
             }
         }
 
-        public int CantidadDeContactos
+        public int CantidadDeContactos()
         {
-            get
-            {
-                return this.ListarTodosLosContactos().Count;
-            }
+            return this.ListarContactos().Count;
         }
 
-        public List<Contacto> ListarTodosLosContactos()
+        public List<Contacto> ListarContactos()
         {
             var contactos = from c in Entidades.Contacto
                             select c;
             return contactos.ToList<Contacto>();
         }
 
-        public Contacto AgregarContacto(string nombreCompleto, string email, string comentario)
+        public Contacto AgregarContacto(int id, string nombreCompleto, string email, string comentario)
         {
             Contacto contacto = new Contacto();
-            contacto.Id = this.CantidadDeContactos;
+            contacto.Id = id;
             contacto.NombreCompleto = nombreCompleto;
             contacto.Email = email;
             contacto.Comentario = comentario;
@@ -48,10 +45,10 @@ namespace DataModel
             return contacto;
         }
 
-        public int EliminarContacto(int IdContacto)
+        public int EliminarContacto(int id)
         {
             int resultado = 0;
-            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Contacto", "Id", IdContacto);
+            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Contacto", "Id", id);
             object contactoParaEliminar;
             if (Entidades.TryGetObjectByKey(key, out contactoParaEliminar))
             {
@@ -61,15 +58,15 @@ namespace DataModel
             return resultado;
         }
 
-        public int ActualizarContacto(int idContacto, string nombreCompleto, string email, string comentario)
+        public int ActualizarContacto(int id, string nombreCompleto, string email, string comentario)
         {
             int resultado = 0;
             Contacto contactoActualizado = new Contacto();
-            contactoActualizado.Id = idContacto;
+            contactoActualizado.Id = id;
             contactoActualizado.NombreCompleto = nombreCompleto;
             contactoActualizado.Email = email;
             contactoActualizado.Comentario = comentario;
-            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Contacto", "Id", idContacto);
+            System.Data.EntityKey key = new System.Data.EntityKey("EpicLeagueEntities.Contacto", "Id", id);
             object contactoParaActualizar;
             if (Entidades.TryGetObjectByKey(key, out contactoParaActualizar))
             {
