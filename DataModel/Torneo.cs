@@ -32,6 +32,14 @@ namespace DataModel
             return torneos.ToList<Torneo>();
         }
 
+        public Torneo BuscarTorneoPorId(int id)
+        {
+            var consulta = from t in Entidades.Torneo
+                           where t.Id.Equals(id)
+                           select t;
+            return consulta.FirstOrDefault<Torneo>();
+        }
+
         public List<Torneo> BuscarTorneoPorNombre(string nombre)
         {
             List<Torneo> torneos;

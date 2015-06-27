@@ -1,4 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/views/masterpages/ResumenMaster.Master" AutoEventWireup="true" CodeBehind="Contacto.aspx.cs" Inherits="WebApp.app.views.resumen.Contacto" %>
+<asp:Content ID="headerContacto" ContentPlaceHolderID="header" runat="server">
+    <title>Formulario de contacto</title>
+</asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content" runat="server">
     <div class="alphadiv">

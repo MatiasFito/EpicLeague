@@ -72,6 +72,7 @@
     <Resource Include="app\styles\administraciontorneos.css" />
     <Resource Include="app\styles\main.css" />
     <Resource Include="app\styles\resumenequipos.css" />
+    <Content Include="app\scripts\equipos.js" />
     <Content Include="app\scripts\index.js" />
     <Content Include="app\services\EquipoService.asmx" />
     <Content Include="app\views\administracion\CreacionEquipos.aspx" />
@@ -208,9 +209,6 @@
           <CustomServerUrl>
           </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
-          <servers defaultServer="SelfHostServer">
-            <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:51987/" workingDir="" />
-          </servers>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
