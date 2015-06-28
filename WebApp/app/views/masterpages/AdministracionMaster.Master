@@ -7,6 +7,8 @@
     <head runat="server">
 	    <link href="../../styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="/app/styles/administraciontorneos.css" rel="Stylesheet" type="text/css" />
+        <script type="text/javascript" src="/app/scripts/jquery-2.1.4.min.js"></script>
+	    <script type="text/javascript" src="/app/scripts/bootstrap.min.js"></script>
 	    <title>Administraci&oacute;n de Equipos</title>
     </head>
     <body class="container">
@@ -36,8 +38,7 @@
 	    </asp:ContentPlaceHolder>
 	    <uc1:ucFooter ID="ucFooter1" runat="server" />
 
-	    <script type="text/javascript" src="/app/scripts/jquery-2.1.4.min.js"></script>
-	    <script type="text/javascript" src="/app/scripts/bootstrap.min.js"></script>
+	  
 
     </body>
 </html>

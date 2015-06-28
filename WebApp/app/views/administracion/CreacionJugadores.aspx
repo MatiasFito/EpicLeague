@@ -1,13 +1,45 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/views/masterpages/AdministracionMaster.Master" AutoEventWireup="true" CodeBehind="CreacionJugadores.aspx.cs" Inherits="WebApp.app.views.administracion.CreacionJugadores" %>
 
+ 
 <asp:Content ID="Content1" ContentPlaceHolderID="content" runat="server">
     <div class="alphadiv">
         <div class="row">
             <div class="col-xs-12">
                 <h2>Crear un nuevo jugador</h2>
-                <form id="Form1" runat="server">
+                 <form role="form" class="form-inline" id="form_creacion_jugador" name="form_creacion_jugador" runat="server">
+                     <div class="alphadiv subgrupo">
+
+                          <div class="form-group">
+                        <asp:Label ID="Label5" Text="Id" runat="server"></asp:Label>
+                      
+                        <asp:TextBox runat="server" id="IdJugador" type="some-HTML5-type" class="form-control" required></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <asp:Label ID="lbl_nombre_jugador" for="txtbox_nombre_jugador" Text="Nombre" runat="server"></asp:Label>
+                        <input type="text" id="input_nombre_jugador" name="input_nombre_jugador" class="form-control" required runat="server">
+                    </div>
+                    <div class="form-group">
+                        <asp:Label ID="lbl_apellido_jugador" for="txtbox_apellido_jugador" Text="Apellido" runat="server"></asp:Label>
+                        <input type="text" id="input_apellido_jugador" class="form-control" required runat="server">
+                    </div>
+                    <div class="form-group">
+                        <asp:Label ID="lbl_edad" Text="Edad" runat="server"></asp:Label>
+                      
+                        <asp:TextBox runat="server" id="input_edad" type="some-HTML5-type" class="form-control" required></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <asp:Label ID="lbl_equipo" Text="Equipo" runat="server"></asp:Label>
+                        <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" DataSourceID="ObjectDataSourceEquipos" DataTextField="Nombre" DataValueField="Id" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" >
+                        </asp:DropDownList>
+                    </div>
+                    <div class="form-group">
+                        <asp:Button ID="btn_submit_creacion_jugador" cssclass="btn btn-primary" Text="Enviar" runat="server" OnClick="btn_submit_creacion_jugador_Click1"/>
+         
+                    </div>
+                </div>
+                     <div class="col-lg-12">
                 <asp:GridView ID="GridViewJugador" runat="server" AutoGenerateColumns="False" 
-                    DataKeyNames="Id" DataSourceID="ObjectDataSourceJugador">
+                    DataKeyNames="Id" CssClass="table table-hover" DataSourceID="ObjectDataSourceJugador">
                     <Columns>
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" 
                             ValidationGroup="EditJugador" />
@@ -57,44 +89,7 @@
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
-                <asp:DetailsView ID="DetailsViewJugador" runat="server" AutoGenerateRows="False" 
-                    DataKeyNames="Id" DataSourceID="ObjectDataSourceJugador" DefaultMode="Insert" 
-                    Height="50px" Width="125px">
-                    <Fields>
-                        <asp:TemplateField HeaderText="Id" SortExpression="Id">
-                            <InsertItemTemplate>
-                                <asp:TextBox ID="InsertJugadorId" runat="server" Text='<%# Bind("Id") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredJugadorId" ValidationGroup="InsertJugador" ControlToValidate="InsertJugadorId" runat="server" Text="*" ErrorMessage="El campo Id es obligatorio"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="RegexId" ValidationGroup="InsertJugador" ControlToValidate="InsertJugadorId" ValidationExpression="^[0-9]+$" runat="server" Text="*" ErrorMessage="El campo de ID solo puede contener numeros"></asp:RegularExpressionValidator>
-                            </InsertItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Nombre" SortExpression="Nombre">
-                            <InsertItemTemplate>
-                                <asp:TextBox ID="InsertJugadorNombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredJugadorNombre" ValidationGroup="InsertJugador" ControlToValidate="InsertJugadorNombre" runat="server" Text="*" ErrorMessage="El campo Nombre es obligatorio"></asp:RequiredFieldValidator>
-                            </InsertItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Apellido" SortExpression="Apellido">
-                            <InsertItemTemplate>
-                                <asp:TextBox ID="InsertJugadorApellido" runat="server" Text='<%# Bind("Apellido") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredJugadorApellido" ValidationGroup="InsertJugador" ControlToValidate="InsertJugadorApellido" runat="server" Text="*" ErrorMessage="El campo Apellido es obligatorio"></asp:RequiredFieldValidator>
-                            </InsertItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Edad" SortExpression="Edad">
-                            <InsertItemTemplate>
-                                <asp:TextBox ID="InsertJugadorEdad" runat="server" Text='<%# Bind("Edad") %>'></asp:TextBox>
-                                <asp:RegularExpressionValidator ID="RegexEdad" ValidationGroup="InsertJugador" ControlToValidate="InsertJugadorEdad" ValidationExpression="^[0-9]*$" runat="server" Text="*" ErrorMessage="El campo de Edad solo puede contener numeros"></asp:RegularExpressionValidator>
-                            </InsertItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="IdEquipo" SortExpression="IdEquipo">
-                            <InsertItemTemplate>
-                                <asp:TextBox ID="InsertJugadorIdEquipo" runat="server" Text='<%# Bind("IdEquipo") %>'></asp:TextBox>
-                                <asp:RegularExpressionValidator ID="RegexIdEquipo" ValidationGroup="InsertJugador" ControlToValidate="InsertJugadorIdEquipo" ValidationExpression="^[0-9]*$" runat="server" Text="*" ErrorMessage="El campo de IdEquipo solo puede contener numeros"></asp:RegularExpressionValidator>
-                            </InsertItemTemplate>
-                        </asp:TemplateField>
-                        <asp:CommandField ShowInsertButton="True" ValidationGroup="InsertJugador" />
-                    </Fields>
-                </asp:DetailsView>
+               
                 <asp:ObjectDataSource ID="ObjectDataSourceJugador" runat="server" 
                     DeleteMethod="EliminarJugador" InsertMethod="AgregarJugador" 
                     SelectMethod="ListarJugadores" TypeName="DataModel.Jugador" 
@@ -119,11 +114,18 @@
                         <asp:Parameter Name="idEquipo" Type="Int32" />
                     </UpdateParameters>
                 </asp:ObjectDataSource>
+                     <asp:ObjectDataSource ID="ObjectDataSourceEquipos" runat="server" SelectMethod="ListarEquipos" TypeName="DataModel.Equipo">
+                         <SelectParameters>
+                             <asp:Parameter DefaultValue="true" Name="IncluirEquiposDeEquiposInactivos" Type="Boolean" />
+                         </SelectParameters>
+                     </asp:ObjectDataSource>
                 <asp:ValidationSummary ID="ValidationSummaryEditJugador" runat="server" 
                         ShowMessageBox="True" ShowSummary="False" ValidationGroup="EditJugador" />
                 <asp:ValidationSummary ID="ValidationSummaryInsertJugador" runat="server" 
                         ShowMessageBox="True" ShowSummary="False" ValidationGroup="InsertJugador" />
+                         </div>
                 </form>
+               
             </div>
         </div>
     </div>
