@@ -16,7 +16,6 @@ namespace WebApp.app.views.administracion
         {
             input_edad.Attributes.Add("type", "number");
             IdJugador.Attributes.Add("type", "number");
-            
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
