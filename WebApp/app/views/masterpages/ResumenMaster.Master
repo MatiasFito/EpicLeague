@@ -8,7 +8,7 @@
     <head runat="server">
         <link href="../../styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="/app/styles/resumenequipos.css" rel="Stylesheet" type="text/css" />
-        <title>Resumen de Equipos</title>
+        <asp:ContentPlaceHolder ID="header" runat="server"></asp:ContentPlaceHolder>
     </head>
    <body class="container">
 	    <div>

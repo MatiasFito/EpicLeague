@@ -16,8 +16,7 @@ namespace WebApp.app.services
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
-    // Para permitir que se llame a este servicio Web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
-    // [System.Web.Script.Services.ScriptService]
+    [System.Web.Script.Services.ScriptService]
     public class EquipoService : System.Web.Services.WebService
     {
         private Equipo equipo;
@@ -30,17 +29,16 @@ namespace WebApp.app.services
         }
 
         [WebMethod]
-        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
-        public string ObtenerEquipos(bool torneosInactivos)
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<EquipoJson> ObtenerEquipos(bool torneosInactivos)
         {
             List<Equipo> equipos = equipo.ListarEquipos(torneosInactivos);
-
             foreach (Equipo equipoActual in equipos)
             {
-                this.equiposJson.Add(new EquipoJson(equipoActual.Id, equipoActual.Nombre, Convert.ToInt32(equipoActual.MontoAbonado), Convert.ToInt32(equipoActual.IdTorneo)));
+                this.equiposJson.Add(new EquipoJson(equipoActual.Id, equipoActual.Nombre, Convert.ToInt32(equipoActual.MontoAbonado), Convert.ToInt32(equipoActual.IdTorneo), equipoActual.Torneo.Nombre, equipoActual.Torneo.Activo));
             }
 
-            return new JavaScriptSerializer().Serialize(this.equiposJson);
+            return this.equiposJson;
         }
     }
 }
