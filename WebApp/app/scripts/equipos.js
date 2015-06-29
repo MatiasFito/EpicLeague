@@ -5,7 +5,8 @@ $(window).load(function () {
     $('#FormListarEquipos').submit(obtenerEquipos);
     tablaDeEquipos = $('#TablaDeEquipos');
     cuerpoTablaDeEquipos = $('#CuerpoTablaDeEquipos');
-    tablaDeEquipos.hide();
+
+    obtenerEquipos();
 });
 
 function obtenerEquipos() {
@@ -17,7 +18,6 @@ function obtenerEquipos() {
         data: "{ torneosInactivos: '" + torneosInactivos + "'}",
         contentType: "application/json; charset=utf-8",
         success: function (resultado) {
-            tablaDeEquipos.show();
             cuerpoTablaDeEquipos.empty();
             var equipos = resultado.d; //En la propiedad 'd' del resultado del servicio esta el array de equipos
             equipos.forEach(function (equipo) {
@@ -36,8 +36,8 @@ function agregarFila(equipo) {
     var fila = '<tr>';
     fila += agregarCelda(equipo.Nombre);
     fila += agregarCelda(equipo.MontoAbonado);
-    fila += agregarCelda(equipo.NombreTorneo);
-    fila += agregarCelda((equipo.TorneoActivo === true) ? 'Activo' : 'Inactivo');
+    fila += agregarCelda((equipo.NombreTorneo !== null) ? equipo.NombreTorneo : '');
+    fila += agregarCelda((equipo.TorneoActivo === true) ? 'Activo' : (equipo.NombreTorneo !== null) ? 'Inactivo' : 'N/A');
     fila += '</tr>';
     return fila;
 };

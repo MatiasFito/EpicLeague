@@ -35,9 +35,15 @@ namespace WebApp.app.services
             List<Equipo> equipos = equipo.ListarEquipos(torneosInactivos);
             foreach (Equipo equipoActual in equipos)
             {
-                this.equiposJson.Add(new EquipoJson(equipoActual.Id, equipoActual.Nombre, Convert.ToInt32(equipoActual.MontoAbonado), Convert.ToInt32(equipoActual.IdTorneo), equipoActual.Torneo.Nombre, equipoActual.Torneo.Activo));
+                if (equipoActual.EstaEnUnTorneo())
+                {
+                    this.equiposJson.Add(new EquipoJson(equipoActual.Id, equipoActual.Nombre, Convert.ToInt32(equipoActual.MontoAbonado), Convert.ToInt32(equipoActual.IdTorneo), equipoActual.Torneo.Nombre, equipoActual.Torneo.Activo));
+                }
+                else
+                {
+                    this.equiposJson.Add(new EquipoJson(equipoActual.Id, equipoActual.Nombre, Convert.ToInt32(equipoActual.MontoAbonado), null));
+                }                
             }
-
             return this.equiposJson;
         }
     }

@@ -25,6 +25,11 @@ namespace DataModel
             return this.ListarEquipos(true).Count;
         }
 
+        public bool EstaEnUnTorneo()
+        {
+            return this.Torneo != null;
+        }
+
         public List<Equipo> ListarEquipos(bool IncluirEquiposDeEquiposInactivos)
         {
             List<Equipo> equipos;

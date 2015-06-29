@@ -10,7 +10,7 @@ namespace Model
         public string Nombre { get; set; }
         public int MontoAbonado {get; set;}
         public int Id {get; set;}
-        public int IdTorneo {get; set;}
+        public int? IdTorneo {get; set;}
         public string NombreTorneo { get; set; }
         public bool TorneoActivo { get; set; }
 
@@ -19,7 +19,7 @@ namespace Model
             Nombre = string.Empty;
         }
 
-        public EquipoJson(int id, string nombre, int montoAbonado, int idTorneo)
+        public EquipoJson(int id, string nombre, int montoAbonado, int? idTorneo)
         {
             Id = id;
             Nombre = nombre;
