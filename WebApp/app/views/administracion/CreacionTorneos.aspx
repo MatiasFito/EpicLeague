@@ -4,7 +4,7 @@
     <div class="alphadiv">
         <div class="row">
             <div class="col-lg-12">
-                <form role="form" class="form-inline" runat="server">
+                <form role="form" id="Form1" class="form-inline" runat="server">
                     <h2>Crear un nuevo torneo</h2>
                     <div class="alphadiv subgrupo">
                         <div class="form-group">
