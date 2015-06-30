@@ -86,3 +86,7 @@ li:hover {
   border-radius: 10px;
   border-style: solid;
 }
+
+tr:hover {
+    color:black;
+}

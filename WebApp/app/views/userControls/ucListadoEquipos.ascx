@@ -1,11 +1,14 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucListadoEquipos.ascx.cs" Inherits="WebApp.app.views.userControls.ucListadoEquipos" %>
+
+<div class="alphadiv subgrupo">
 <form id="FormListarEquipos" class="form form-inline" action="#" method="post">
     <div class="form-group">
-        <button id="ButtonListarEquipos" class="btn btn-primary form-control">Listar equipos</button>
         <label id="LabelTorneosInactivos" class="form-label" for="CheckBoxTorneosInactivos">Incluir equipos de torneos inactivos</label>
         <input type="checkbox" id="CheckBoxTorneosInactivos" checked="checked" />
+        <button id="ButtonListarEquipos" class="btn btn-primary form-control">Listar equipos</button>
     </div>
-</form>
+    </div>
+ <div class="col-lg-12">
 <table id="TablaDeEquipos" class="table table-hover">
     <thead>
         <tr>
@@ -19,3 +22,5 @@
         
     </tbody>
 </table>
+     </div>
+</form>

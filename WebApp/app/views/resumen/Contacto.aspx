@@ -7,8 +7,48 @@
     <div class="alphadiv">
         <div class="row">
             <div class="col-lg-12">
-                <form id="Form1" runat="server">
-                <asp:GridView ID="GridViewContacto" runat="server" AutoGenerateColumns="False" 
+                <form id="Form1" runat="server" class="form-inline">
+                    <div class="alphadiv subgrupo">
+                
+                <asp:DetailsView ID="DetailsViewContacto" runat="server" AutoGenerateRows="False" 
+                    DataKeyNames="Id" DataSourceID="ObjectDataSourceContacto" DefaultMode="Insert" 
+                    Height="50px" Width="125px">
+                    <Fields>
+                        <asp:TemplateField HeaderText="Id" SortExpression="Id">
+                            <InsertItemTemplate>
+                                <asp:TextBox ID="InsertContactoId" runat="server" Text='<%# Bind("Id") %>'></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredContactoId" ValidationGroup="InsertContacto" ControlToValidate="InsertContactoId" runat="server" Text="*" ErrorMessage="El campo Id es obligatorio"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegexId" ValidationGroup="InsertContacto" ControlToValidate="InsertContactoId" ValidationExpression="^[0-9]+$" runat="server" Text="*" ErrorMessage="El campo de ID solo puede contener numeros"></asp:RegularExpressionValidator>
+                            </InsertItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Nombre Completo" SortExpression="NombreCompleto">
+                            <InsertItemTemplate>
+                                <asp:TextBox ID="InsertContactoNombreCompleto" runat="server" Text='<%# Bind("NombreCompleto") %>'></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredContactoNombreCompleto" ValidationGroup="InsertContacto" ControlToValidate="InsertContactoNombreCompleto" runat="server" Text="*" ErrorMessage="El campo Nombre Completo es obligatorio"></asp:RequiredFieldValidator>
+                            </InsertItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Email" SortExpression="Email">
+                            <InsertItemTemplate>
+                                <asp:TextBox ID="InsertContactoEmail" runat="server" Text='<%# Bind("Email") %>'></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredContactoEmail" ValidationGroup="InsertContacto" ControlToValidate="InsertContactoEmail" runat="server" Text="*" ErrorMessage="El campo Email es obligatorio"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegexEmail" 
+                                    ValidationGroup="InsertContacto" ControlToValidate="InsertContactoEmail" 
+                                    runat="server" Text="*" ErrorMessage="El campo de Email es invalido" 
+                                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                            </InsertItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Comentario" SortExpression="Comentario">
+                            <InsertItemTemplate>
+                                <asp:TextBox ID="InsertContactoComentario" runat="server" Text='<%# Bind("Comentario") %>'></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredContactoComentario" ValidationGroup="InsertContacto" ControlToValidate="InsertContactoComentario" runat="server" Text="*" ErrorMessage="El campo Comentario es obligatorio"></asp:RequiredFieldValidator>
+                            </InsertItemTemplate>
+                        </asp:TemplateField>
+                        <asp:CommandField ShowInsertButton="True" ValidationGroup="InsertContacto" />
+                    </Fields>
+                </asp:DetailsView>
+                        </div>
+
+                        <asp:GridView ID="GridViewContacto" runat="server" AutoGenerateColumns="False" 
                     DataKeyNames="Id" DataSourceID="ObjectDataSourceContacto">
                     <Columns>
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" 
@@ -54,42 +94,6 @@
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
-                <asp:DetailsView ID="DetailsViewContacto" runat="server" AutoGenerateRows="False" 
-                    DataKeyNames="Id" DataSourceID="ObjectDataSourceContacto" DefaultMode="Insert" 
-                    Height="50px" Width="125px">
-                    <Fields>
-                        <asp:TemplateField HeaderText="Id" SortExpression="Id">
-                            <InsertItemTemplate>
-                                <asp:TextBox ID="InsertContactoId" runat="server" Text='<%# Bind("Id") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredContactoId" ValidationGroup="InsertContacto" ControlToValidate="InsertContactoId" runat="server" Text="*" ErrorMessage="El campo Id es obligatorio"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="RegexId" ValidationGroup="InsertContacto" ControlToValidate="InsertContactoId" ValidationExpression="^[0-9]+$" runat="server" Text="*" ErrorMessage="El campo de ID solo puede contener numeros"></asp:RegularExpressionValidator>
-                            </InsertItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Nombre Completo" SortExpression="NombreCompleto">
-                            <InsertItemTemplate>
-                                <asp:TextBox ID="InsertContactoNombreCompleto" runat="server" Text='<%# Bind("NombreCompleto") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredContactoNombreCompleto" ValidationGroup="InsertContacto" ControlToValidate="InsertContactoNombreCompleto" runat="server" Text="*" ErrorMessage="El campo Nombre Completo es obligatorio"></asp:RequiredFieldValidator>
-                            </InsertItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Email" SortExpression="Email">
-                            <InsertItemTemplate>
-                                <asp:TextBox ID="InsertContactoEmail" runat="server" Text='<%# Bind("Email") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredContactoEmail" ValidationGroup="InsertContacto" ControlToValidate="InsertContactoEmail" runat="server" Text="*" ErrorMessage="El campo Email es obligatorio"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="RegexEmail" 
-                                    ValidationGroup="InsertContacto" ControlToValidate="InsertContactoEmail" 
-                                    runat="server" Text="*" ErrorMessage="El campo de Email es invalido" 
-                                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                            </InsertItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Comentario" SortExpression="Comentario">
-                            <InsertItemTemplate>
-                                <asp:TextBox ID="InsertContactoComentario" runat="server" Text='<%# Bind("Comentario") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredContactoComentario" ValidationGroup="InsertContacto" ControlToValidate="InsertContactoComentario" runat="server" Text="*" ErrorMessage="El campo Comentario es obligatorio"></asp:RequiredFieldValidator>
-                            </InsertItemTemplate>
-                        </asp:TemplateField>
-                        <asp:CommandField ShowInsertButton="True" ValidationGroup="InsertContacto" />
-                    </Fields>
-                </asp:DetailsView>
                 <asp:ObjectDataSource ID="ObjectDataSourceContacto" runat="server" 
                     DeleteMethod="EliminarContacto" InsertMethod="AgregarContacto" 
                     SelectMethod="ListarContactos" TypeName="DataModel.Contacto" 

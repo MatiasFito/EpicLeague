@@ -69,3 +69,22 @@ li:hover {
 .alert-text {
         color: red;
 }
+
+.subgrupo {
+            margin:10px;
+            padding:10px;
+}
+
+.table {
+    width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-color: yellowgreen;
+  border-width: 3px;
+  border-radius: 10px;
+  border-style: solid;
+}
+
+tr:hover {
+    color:black;
+}

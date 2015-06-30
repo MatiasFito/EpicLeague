@@ -8,7 +8,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-         <div class="alphadiv">
+         <div class="alphadiv subgrupo">
             <div class="row">
                 <div class="col-lg-12">
                     <uc1:ucListadoEquipos ID="listadoEquipos" runat="server" />
