@@ -9,11 +9,11 @@
                     <div class="alphadiv subgrupo">
                         <div class="form-group">
                             <asp:Label ID="lbl_torneo_id" for="txtbox_torneo_id" Text="Id del Toreno" runat="server"></asp:Label>
-                            <asp:TextBox class="form-control" ID="txtbox_torneo_id" runat="server"></asp:TextBox>
+                            <input type="text" class="form-control" ID="txtbox_torneo_id" runat="server" required />
                         </div>
                         <div class="form-group">
                             <asp:Label ID="lbl_torneo_nombre" for="txtbox_torneo_nombre" Text="Nombre del Torneo" runat="server"></asp:Label>
-                            <asp:TextBox class="form-control" ID="txtbox_torneo_nombre" runat="server"></asp:TextBox>
+                            <input type="text" class="form-control" ID="txtbox_torneo_nombre" runat="server" required />
                         </div>
                         <div class="form-group">
                             <asp:Label ID="lbl_torneo_esactivo" Text="Activo" runat="server"></asp:Label>
@@ -25,10 +25,12 @@
                     </div>
 
                     <div class="col-lg-12">
-                    <asp:GridView ID="GridViewTorneos" runat="server" AutoGenerateColumns="False" DataSourceID="OdsTorneos" CssClass="table table-hover" AllowPaging="True">
+                    <asp:GridView ID="GridViewTorneos" runat="server" AutoGenerateColumns="False" 
+                            DataSourceID="OdsTorneos" CssClass="table table-hover" AllowPaging="True" 
+                            DataKeyNames="Id">
                         <Columns>
                             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                            <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
+                            <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" ReadOnly="true" />
                             <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                             <asp:CheckBoxField DataField="Activo" HeaderText="Activo" SortExpression="Activo" />
                         </Columns>

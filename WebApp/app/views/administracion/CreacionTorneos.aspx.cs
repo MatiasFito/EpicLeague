@@ -15,7 +15,7 @@ namespace WebApp.app.views.administracion
         DataModel.Torneo torneo = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            txtbox_torneo_id.Attributes.Add("type", "number");
         }
 
         protected void btn_submit_creacion_torneo_Click1(object sender, EventArgs e)
@@ -23,9 +23,26 @@ namespace WebApp.app.views.administracion
             
             torneo = new DataModel.Torneo();
 
-            torneo.AgregarTorneo(Convert.ToInt32(txtbox_torneo_id.Text),txtbox_torneo_nombre.Text,chk_torneo_esactivo.Checked);
+            int idTorneo = Convert.ToInt32(txtbox_torneo_id.Value);
+            string nombreTorneo = txtbox_torneo_nombre.Value;
+            bool estadoTorneo = chk_torneo_esactivo.Checked;
+            List<int> idsExistentes = torneo.ObtenerTodosLosId();
+
+            if (idsExistentes.Contains(idTorneo) || idTorneo < 0)
+            {
+                this.ReiniciarCampos();
+                return;
+            }
+
+            torneo.AgregarTorneo(idTorneo,nombreTorneo,estadoTorneo);
             Response.Redirect("CreacionTorneos.aspx");
         }
 
+        private void ReiniciarCampos() 
+        {
+            txtbox_torneo_id.Value = string.Empty;
+            txtbox_torneo_nombre.Value = string.Empty;
+            chk_torneo_esactivo.Checked = false;
+        }
     }
 }

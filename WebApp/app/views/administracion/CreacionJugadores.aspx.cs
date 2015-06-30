@@ -28,16 +28,31 @@ namespace WebApp.app.views.administracion
         {
             jugador = new DataModel.Jugador();
             
-            var id = IdJugador.Text;
+            var id = Convert.ToInt32(IdJugador.Text);
             var nombre = input_nombre_jugador.Value;
             var apellido = input_apellido_jugador.Value;
-            var edad = input_edad.Text;
+            var edad = Convert.ToInt32(input_edad.Text);
+            var idEquipo = Convert.ToInt32(DropDownList1.SelectedValue.ToString());
+            List<int> idsOcupadas = jugador.ObtenerTodosLosId();
 
-            jugador.AgregarJugador(Convert.ToInt32(id), nombre, apellido, Convert.ToInt32(edad), Convert.ToInt32(DropDownList1.SelectedValue.ToString()));
+            if (idsOcupadas.Contains(id) || id < 0)
+            {
+                this.ReiniciarCampos();
+                return;
+            }
 
-            Response.Redirect("CreacionJugador.aspx");
+            jugador.AgregarJugador(id, nombre, apellido, edad, idEquipo);
+
+            Response.Redirect("CreacionJugadores.aspx");
         }
 
-      
+        private void ReiniciarCampos()
+        {
+            IdJugador.Text = string.Empty;
+            input_nombre_jugador.Value = string.Empty;
+            input_apellido_jugador.Value = string.Empty;
+            input_edad.Text = string.Empty;
+            return;
+        }
     }
 }

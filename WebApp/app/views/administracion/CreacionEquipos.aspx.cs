@@ -19,17 +19,33 @@ namespace WebApp.app.views.administracion
         protected void btn_submit_creacion_equipo_Click1(object sender, EventArgs e)
         {
             equipo = new DataModel.Equipo();
-            var id = input_id_equipo.Text;
+            var id = Convert.ToInt32(input_id_equipo.Text);
             var nombre = input_nombre_equipo.Value;
-            var monto = input_monto.Value;
+            var monto = Convert.ToInt32(input_monto.Value);
+            var idTorneo = Convert.ToInt32(DropDownList1.SelectedValue.ToString());
+            List<int> idsOcupados = equipo.ObtenerTodosLosId();
 
-            equipo.AgregarEquipo(Convert.ToInt32(id), nombre, Convert.ToInt32(monto), Convert.ToInt32(DropDownList1.SelectedValue.ToString()));
+            if (idsOcupados.Contains(id) || id < 0)
+            {
+                this.LimpiarCampos();
+                return;
+            }
+
+            equipo.AgregarEquipo(id, nombre, monto, idTorneo);
             Response.Redirect("CreacionEquipos.aspx");
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void LimpiarCampos()
+        {
+            input_id_equipo.Text = string.Empty;
+            input_nombre_equipo.Value = string.Empty;
+            input_monto.Value = string.Empty;
+            return;
         }
     }
 }

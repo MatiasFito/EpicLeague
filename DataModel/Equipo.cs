@@ -25,6 +25,13 @@ namespace DataModel
             return this.ListarEquipos(true).Count;
         }
 
+        public List<int> ObtenerTodosLosId()
+        {
+            var ids = from t in Entidades.Equipo
+                      select t.Id;
+            return ids.ToList<int>();
+        }
+
         public bool EstaEnUnTorneo()
         {
             return this.Torneo != null;

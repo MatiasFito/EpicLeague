@@ -23,7 +23,14 @@ namespace DataModel
         public int CantidadDeTorneos()
         {
             return this.ListarTodosLosTorneos().Count;
-        }     
+        }
+
+        public List<int> ObtenerTodosLosId()
+        {
+            var ids = from t in Entidades.Torneo
+                      select t.Id;
+            return ids.ToList<int>();
+        }
 
         public List<Torneo> ListarTodosLosTorneos()
         {

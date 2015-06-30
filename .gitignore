@@ -186,8 +186,8 @@ FakesAssemblies/
 .ntvs_analysis.dat
 
 # Cambios a la base de datos
-*.mdf
-*.ldf
+.mdf
+.ldf
 
 # Visual Studio 6 build log
 *.plg

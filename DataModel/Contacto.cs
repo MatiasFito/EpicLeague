@@ -25,6 +25,13 @@ namespace DataModel
             return this.ListarContactos().Count;
         }
 
+        public List<int> ObtenerTodosLosId()
+        {
+            var ids = from t in Entidades.Contacto
+                      select t.Id;
+            return ids.ToList<int>();
+        }
+
         public List<Contacto> ListarContactos()
         {
             var contactos = from c in Entidades.Contacto

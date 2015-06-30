@@ -28,6 +28,13 @@ namespace DataModel
             }
         }
 
+        public List<int> ObtenerTodosLosId()
+        {
+            var ids = from t in Entidades.Jugador
+                      select t.Id;
+            return ids.ToList<int>();
+        }
+
         public List<Jugador> ListarJugadores()
         {
             var jugadores = from j in Entidades.Jugador
