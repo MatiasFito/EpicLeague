@@ -15,7 +15,8 @@ namespace WebApp.app.views.administracion
         DataModel.Torneo torneo = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            txtbox_torneo_id.Attributes.Add("type", "number");
+
         }
 
         protected void btn_submit_creacion_torneo_Click1(object sender, EventArgs e)
